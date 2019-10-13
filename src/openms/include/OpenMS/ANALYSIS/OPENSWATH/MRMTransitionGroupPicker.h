@@ -273,7 +273,7 @@ public:
         if (compute_peak_quality_)
         {
           String outlier = "none";
-          double qual = computeQuality_(transition_group, picked_chroms, chr_idx, best_left, best_right, outlier);
+          double qual = computeQuality_(transition_group, picked_chroms, chr_idx, best_left, best_right, outlier, mrmFeature);
           if (qual < min_qual_) 
           {
             return mrmFeature;
@@ -808,7 +808,7 @@ protected:
                            const int chr_idx,
                            const double best_left,
                            const double best_right,
-                           String& outlier)
+                           String& outlier, MRMFeature & mrmFeature)
     {
       // Resample all chromatograms around the current estimated peak and
       // collect the raw intensities. For resampling, use a bit more on either
@@ -834,6 +834,8 @@ protected:
       // Compute the cross-correlation for the collected intensities
       std::vector<double> mean_shapes;
       std::vector<double> mean_coel;
+      std::vector<int> deltas;
+      std::vector<int> intensities;
       for (Size k = 0; k < all_ints.size(); k++)
       {
         std::vector<double> shapes;
@@ -845,8 +847,10 @@ protected:
               all_ints[k], all_ints[i], boost::numeric_cast<int>(all_ints[i].size()), 1);
 
           // the first value is the x-axis (retention time) and should be an int -> it show the lag between the two
-          double res_coelution = std::abs(OpenSwath::Scoring::xcorrArrayGetMaxPeak(res)->first);
-          double res_shape = std::abs(OpenSwath::Scoring::xcorrArrayGetMaxPeak(res)->second);
+          deltas.push_back(std::abs(OpenSwath::Scoring::xcorrArrayGetMaxPeak(res)->first));
+          intensities.push_back(std::abs(OpenSwath::Scoring::xcorrArrayGetMaxPeak(res)->second));
+          double res_coelution = deltas.back();
+          double res_shape = intensities.back();
 
           shapes.push_back(res_shape);
           coel.push_back(res_coelution);
@@ -864,6 +868,19 @@ protected:
         // mean coel scores above 3.5 should be a real sign of trouble ... !
         mean_shapes.push_back(shapes_mean);
         mean_coel.push_back(coel_mean);
+      }
+
+      OpenSwath::mean_and_stddev msc;
+      msc = std::for_each(deltas.begin(), deltas.end(), msc);
+      double deltas_mean = msc.mean();
+      double deltas_stdv = msc.sample_stddev();
+      double xcorr_coelution_score = deltas_mean + deltas_stdv;
+
+      double xcorr_shape_score;
+      {
+        OpenSwath::mean_and_stddev msc;
+        msc = std::for_each(intensities.begin(), intensities.end(), msc);
+        xcorr_shape_score = msc.mean();
       }
 
       // find the chromatogram with the minimal shape score and the maximal
@@ -936,7 +953,16 @@ protected:
       double coel_score = std::accumulate(mean_coel.begin(), mean_coel.end(), 0.0) / mean_coel.size();
       coel_score = (coel_score - 1.0) / 2.0;
 
+      // std::cout << " missing peaks " << missing_peaks << " out of " << picked_chroms.size() << std::endl;
+      int present_peaks = picked_chroms.size() - missing_peaks;
+      if (present_peaks < 3) {}
       double score = shape_score - coel_score - 1.0 * missing_peaks / picked_chroms.size();
+
+      mrmFeature.setMetaValue("init_missing_peaks", missing_peaks);
+      mrmFeature.setMetaValue("init_shape_score", shape_score);
+      mrmFeature.setMetaValue("init_coel_score", coel_score);
+      mrmFeature.setMetaValue("init_xshape_score", xcorr_shape_score);
+      mrmFeature.setMetaValue("init_xcoel_score", xcorr_coelution_score);
 
       OPENMS_LOG_DEBUG << " computed score  " << score << " (from " <<  shape_score << 
         " - " << coel_score << " - " << 1.0 * missing_peaks / picked_chroms.size() << ")" << std::endl;
