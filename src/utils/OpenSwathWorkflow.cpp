@@ -708,6 +708,7 @@ protected:
     {
       readoptions = "normal";
       load_into_memory = true;
+      std::cout << " working in memory " << std::endl;
     }
 
     bool is_sqmass_input  = (FileHandler::getTypeByFileName(file_list[0]) == FileTypes::SQMASS);
@@ -848,7 +849,8 @@ protected:
     String irt_mzml_out = debug_params.getValue("irt_mzml");
     Param irt_detection_param = getParam_().copy("RTNormalization:", true);
     TransformationDescription trafo_rtnorm;
-    if (nonlinear_irt_tr_file.empty())
+    // if (nonlinear_irt_tr_file.empty() and false)
+    if (nonlinear_irt_tr_file.empty() )
     {
       trafo_rtnorm = performCalibration(trafo_in, irt_tr_file, swath_maps,
                                         min_rsq, min_coverage, feature_finder_param,
@@ -872,12 +874,50 @@ protected:
 
       cp_irt.rt_extraction_window = 900; // extract some substantial part of the RT range (should be covered by linear correction)
       cp_irt.rt_extraction_window = 600; // extract some substantial part of the RT range (should be covered by linear correction)
+      std::cout << " done with first linear calibration! ... " << std::endl;
 
       ///////////////////////////////////
       // Get the secondary transformation (nonlinear)
       ///////////////////////////////////
       OpenSwath::LightTargetedExperiment transition_exp_nl;
-      transition_exp_nl = loadTransitionList(FileHandler::getType(nonlinear_irt_tr_file), nonlinear_irt_tr_file, tsv_reader_param);
+      if (false)
+      {
+        transition_exp_nl = loadTransitionList(FileHandler::getType(nonlinear_irt_tr_file), nonlinear_irt_tr_file, tsv_reader_param);
+      }
+      else
+      {
+        // subsample the transition list to get some non-linear iRTs
+        std::cout << " loading tr file:!! " << tr_file << std::endl;
+        transition_exp_nl = loadTransitionList(tr_type, tr_file, tsv_reader_param);
+        auto peptides = transition_exp_nl.getCompounds();
+        // std::random_shuffle(peptides.begin(), peptides.end());
+        std::cout << " try and erase? tr file:!! " << tr_file << std::endl;
+        peptides.erase(peptides.begin() + 10000, peptides.end());
+        transition_exp_nl.compounds = peptides;
+
+        std::set<std::string> matching_compounds;
+        for (const auto& p : peptides) matching_compounds.insert(p.id);
+
+
+				transition_exp_nl.transitions.erase(std::remove_if(transition_exp_nl.transitions.begin(),
+																				transition_exp_nl.transitions.end(),
+																				[&matching_compounds](const OpenSwath::LightTransition tr)-> bool 
+																							 { return matching_compounds.find(tr.getPeptideRef()) == matching_compounds.end(); }), 
+												 transition_exp_nl.transitions.end());
+        // std::vector<LightTransition> transitions;
+        // for (const auto& t : transition_exp_nl.getTransitions()) 
+        // {
+        //   if (matching_compounds.find(t.getPeptideRef()) != matching_compounds.end())
+        //   {
+        //     transitions.push_back(t);
+        //   }
+        // }
+
+      }
+      std::cout << " selkected compounds " << transition_exp_nl.compounds.size() << std::endl;
+
+      Param nonlinear_irt = irt_detection_param;
+      nonlinear_irt.setValue("estimateBestPeptides", "true");
 
       std::vector< OpenMS::MSChromatogram > chromatograms;
       OpenSwathCalibrationWorkflow wf;
@@ -886,7 +926,7 @@ protected:
                                     trafo_rtnorm, cp_irt, sonar, load_into_memory);
 
       trafo_rtnorm = wf.doDataNormalization_(transition_exp_nl, chromatograms, min_rsq,
-                                        min_coverage, feature_finder_param, irt_detection_param,
+                                        min_coverage, feature_finder_param, nonlinear_irt,
                                         swath_maps, mz_correction_function,
                                         cp_irt.mz_extraction_window, cp_irt.ppm);
 
