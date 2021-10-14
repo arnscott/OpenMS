@@ -48,10 +48,107 @@
 
 #include <OpenMS/ANALYSIS/OPENSWATH/OpenSwathHelper.h>
 #include <OpenMS/ANALYSIS/OPENSWATH/DATAACCESS/SimpleOpenMSSpectraAccessFactory.h>
+#include <OpenMS/MATH/STATISTICS/StatisticFunctions.h>
+
+double getQuantile(std::vector<double> vec, double quantile){
+  int n = vec.size();
+  double p = quantile;
+  double m = 1-p; // Type 7 definition as implemented in R.
+  int j = floor(n*p + m);
+  double g = n*p + m - j; // Replacing n*p with 24884.16 outputs correct result.
+  double gamma = g;
+
+#if 0
+  sort(vec.begin(), vec.end());
+  double sampleQuant = (1.0 - gamma)*vec[j-1] + gamma*vec[j];
+#else
+
+  // do a simple approximation (saves us from calling nth two times)
+  double sampleQuant;
+  if (p <= 0.5)
+  {
+    int idx = n*p;
+    std::nth_element(vec.begin(), vec.begin()+idx, vec.end(), std::less<double>());
+    sampleQuant = vec[idx];
+  }
+  else
+  {
+    int idx = n*(1-p);
+    std::nth_element(vec.begin(), vec.begin()+idx, vec.end(), std::greater<double>());
+    sampleQuant = vec[idx];
+  }
+#endif
+
+  return sampleQuant;
+}
 
 // OpenSwathCalibrationWorkflow
 namespace OpenMS
 {
+
+    void performXVal(
+    std::vector<std::pair<double, double> > pairs_corrected,
+    const Param& irt_detection_param
+        
+        )
+    {
+      std::vector<size_t> item_list;
+      item_list.reserve(pairs_corrected.size());
+      for (Size k = 0; k < pairs_corrected.size(); k++) {item_list.push_back(k);}
+      std::random_shuffle(item_list.begin(), item_list.end());
+
+      std::cout << " list first " << item_list[0] << std::endl;
+
+      double xval_mean = 0;
+      double xval_mad = 0;
+      double xval_90 = 0;
+      Size NR_XVAL = 5;
+      for (Size xval = 0; xval < NR_XVAL; xval++)
+      {
+        // select items
+        std::vector<std::pair<double, double> > list_train;
+        list_train.reserve(pairs_corrected.size());
+        std::vector<std::pair<double, double> > list_eval;
+        list_eval.reserve(pairs_corrected.size());
+        for (Size k = 0; k < pairs_corrected.size(); k++)
+        {
+          if (int(k * 1.0 / pairs_corrected.size() * NR_XVAL) == xval) list_eval.push_back( pairs_corrected[item_list[k]] );
+          else list_train.push_back(pairs_corrected[item_list[k]]);
+        }
+
+        // std::cout << " got data " << list_train.size() << " and " << list_eval.size() << std::endl;
+        TransformationDescription trafo_eval;
+        trafo_eval.setDataPoints(list_train);
+
+        Param model_params;
+        model_params.setValue("symmetric_regression", "false");
+        model_params.setValue("span", irt_detection_param.getValue("lowess:span"));
+        model_params.setValue("num_nodes", irt_detection_param.getValue("b_spline:num_nodes"));
+        String model_type = irt_detection_param.getValue("alignmentMethod");
+        trafo_eval.fitModel(model_type, model_params);
+        trafo_eval.invert();
+
+        // Now evaluate on the evaluation dataset
+        double mean = 0;
+        std::vector<double> mad; // median absolute deviation
+        mad.reserve(list_eval.size());
+        for (const auto& e : list_eval)
+        {
+          mean += std::fabs( trafo_eval.apply( e.second ) - e.first);
+          mad.push_back( std::fabs( trafo_eval.apply( e.second ) - e.first) );
+        }
+        mean /= list_eval.size();
+        xval_mad += Math::median(mad.begin(), mad.end());
+        xval_90 += getQuantile(mad, 0.9);
+        OPENMS_LOG_DEBUG << " mean error " << mean << std::endl;
+        std::cout << " mean error " << mean << std::endl;
+        xval_mean += mean;
+      }
+      xval_mean /= NR_XVAL;
+      xval_mad /= NR_XVAL;
+      xval_90 /= NR_XVAL;
+      std::cout << "Model evaluation: mean of xval " << xval_mean << " mean of mad " << xval_mad << " 90 quantile " << xval_90 << std::endl;
+    }
 
   OpenSwath::SpectrumAccessPtr loadMS1Map(const std::vector< OpenSwath::SwathMap > & swath_maps, bool load_into_memory)
   {
@@ -288,6 +385,32 @@ namespace OpenMS
         }
       }
     }
+
+#if 1
+    // Crossvalidation
+    if (pairs_corrected.size() > 10)
+    {
+      srand(time(0));
+      performXVal(pairs_corrected, irt_detection_param);
+
+      String model_type = irt_detection_param.getValue("alignmentMethod");
+      if (model_type == "lowess")
+      {
+        std::cout << "===============================" << std::endl;
+        std::cout << "===============================" << std::endl;
+        std::cout << "===============================" << std::endl;
+        auto tmp = irt_detection_param;
+        double best_xval = -1;
+        double best_span = irt_detection_param.getValue("lowess:span");
+        for (int k = 0; k < 30; k++)
+        {
+          std::cout << " set span " << k/100.0 << std::endl;
+          tmp.setValue("lowess:span", k/100.0);
+          performXVal(pairs_corrected, tmp);
+        }
+      }
+    }
+#endif
 
     // 8. Correct m/z deviations using SwathMapMassCorrection
     SwathMapMassCorrection::correctMZ(trgrmap_final, swath_maps,
