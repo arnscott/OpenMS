@@ -53,6 +53,7 @@
 
 #include <numeric>
 
+#define MANY_METAVALUES
 //#define DEBUG_TRANSITIONGROUPPICKER
 
 namespace OpenMS
@@ -160,6 +161,10 @@ public:
       // and terminate.
       int chr_idx, peak_idx, cnt = 0;
       std::vector<MRMFeature> features;
+      //     -- done [took 50.22 s (CPU), 19.59 s (Wall)] --
+      // 1thr, 5SW, MS1: -- done [took 8.70 s (CPU), 8.70 s (Wall)] -- takes 4 seconds (ca 40% of the time)
+      // 1thr, 5SW, MS1: -- done [took 8.70 s (CPU), 8.69 s (Wall)] --
+      //
       while (true)
       {
         chr_idx = -1; peak_idx = -1;
@@ -184,6 +189,7 @@ public:
           total_xic = mrm_feature.getMetaValue("total_xic");
           features.push_back(std::move(mrm_feature));
         }
+        OPENMS_LOG_DEBUG << " created f " << std::endl;
 
         cnt++;
         if (stop_after_feature_ > 0 && cnt > stop_after_feature_) {break;}
@@ -193,6 +199,10 @@ public:
         }
       }
 
+        OPENMS_LOG_DEBUG << " check overlap " << std::endl;
+        // skipping this
+
+#if 1
       // Check for completely overlapping features
       for (Size i = 0; i < features.size(); i++)
       {
@@ -200,15 +210,19 @@ public:
         bool skip = false;
         for (Size j = 0; j < i; j++)
         {
+#ifdef MANY_METAVALUES
           if ((double)mrm_feature.getMetaValue("leftWidth") >=  (double)features[j].getMetaValue("leftWidth") && 
               (double)mrm_feature.getMetaValue("rightWidth") <= (double)features[j].getMetaValue("rightWidth") )
           { skip = true; }
+#endif
         }
         if (mrm_feature.getIntensity() > 0 && !skip)
         {
-          transition_group.addFeature(mrm_feature);
+          OPENMS_LOG_DEBUG << " add f! " << std::endl;
+          transition_group.addFeature((mrm_feature));
         }
       }
+#endif
 
     }
 
@@ -247,6 +261,7 @@ public:
       std::vector< double > right_edges;
       double min_left = best_left;
       double max_right = best_right;
+
       if (use_consensus_)
       {
         // Remove other, overlapping, picked peaks (in this and other
@@ -845,6 +860,8 @@ protected:
           if (i == k) {continue;}
           OpenSwath::Scoring::XCorrArrayType res = OpenSwath::Scoring::normalizedCrossCorrelation(
               all_ints[k], all_ints[i], boost::numeric_cast<int>(all_ints[i].size()), 1);
+              // all_ints[k], all_ints[i], 4, 1);
+          // std::cout << " we are looking at " << all_ints[i].size() << std::endl;
 
           // the first value is the x-axis (retention time) and should be an int -> it show the lag between the two
           deltas.push_back(std::abs(OpenSwath::Scoring::xcorrArrayGetMaxPeak(res)->first));
@@ -952,6 +969,12 @@ protected:
       double shape_score = std::accumulate(mean_shapes.begin(), mean_shapes.end(), 0.0) / mean_shapes.size();
       double coel_score = std::accumulate(mean_coel.begin(), mean_coel.end(), 0.0) / mean_coel.size();
       coel_score = (coel_score - 1.0) / 2.0;
+      if (coel_score == 0.0)
+      {
+        // std::cout << " got 0.5 " << std::accumulate(mean_coel.begin(), mean_coel.end(), 0.0) << " / " <<mean_coel.size() << std::endl;
+        // for (auto k : mean_coel) std::cout << k << std::endl;
+        // -> often we have only 2 or 3 peaks ...
+      }
 
       // std::cout << " missing peaks " << missing_peaks << " out of " << picked_chroms.size() << std::endl;
       int present_peaks = picked_chroms.size() - missing_peaks;
@@ -966,7 +989,6 @@ protected:
 
       OPENMS_LOG_DEBUG << " computed score  " << score << " (from " <<  shape_score << 
         " - " << coel_score << " - " << 1.0 * missing_peaks / picked_chroms.size() << ")" << std::endl;
-
       return score;
     }
 
@@ -1110,6 +1132,9 @@ protected:
         it->setMZ(chrom_it->getMZ());
       }
     }
+
+
+
 
     /**
       @brief Resample a container at the positions indicated by the master peak container

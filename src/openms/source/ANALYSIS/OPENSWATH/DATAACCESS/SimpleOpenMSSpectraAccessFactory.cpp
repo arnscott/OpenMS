@@ -69,11 +69,13 @@ namespace OpenMS
     bool is_cached = SimpleOpenMSSpectraFactory::isExperimentCached(exp);
     if (is_cached)
     {
+      std::cout << " is cached: OpenSwath::SpectrumAccessPtr SimpleOpenMSSpectraFactory::getSpectrumAccessOpenMSPtr(boost::shared_ptr<PeakMap> exp)" << std::endl;
       OpenSwath::SpectrumAccessPtr experiment(new OpenMS::SpectrumAccessOpenMSCached(exp->getLoadedFilePath()));
       return experiment;
     }
     else
     {
+      std::cout << " is not cached: OpenSwath::SpectrumAccessPtr SimpleOpenMSSpectraFactory::getSpectrumAccessOpenMSPtr(boost::shared_ptr<PeakMap> exp)" << std::endl;
       OpenSwath::SpectrumAccessPtr experiment(new OpenMS::SpectrumAccessOpenMS(exp));
       return experiment;
     }

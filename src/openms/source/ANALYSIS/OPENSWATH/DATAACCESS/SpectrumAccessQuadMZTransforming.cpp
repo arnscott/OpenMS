@@ -34,6 +34,8 @@
 
 #include <OpenMS/ANALYSIS/OPENSWATH/DATAACCESS/SpectrumAccessQuadMZTransforming.h>
 
+#include <iostream>
+
 namespace OpenMS
 {
 
@@ -60,7 +62,57 @@ namespace OpenMS
 
     OpenSwath::SpectrumPtr SpectrumAccessQuadMZTransforming::getSpectrumById(int id)
     {
+      static int ctr = 0;
       OpenSwath::SpectrumPtr s = sptr_->getSpectrumById(id);
+      // with: OpenSwathWorkflow took 05:58 m (wall), 28:40 m (CPU), 36.62 s (system), 28:04 m (user).
+      // w/o: OpenSwathWorkflow took 03:16 m (wall), 13:50 m (CPU), 21.27 s (system), 13:29 m (user).
+      // with new it :OpenSwathWorkflow took 03:02 m (wall), 14:41 m (CPU), 20.05 s (system), 14:21 m (user).
+      // with no calibration at all: OpenSwathWorkflow took 02:51 m (wall), 14:01 m (CPU), 18.36 s (system), 13:43 m (user).
+      // now takes: OpenSwathWorkflow took 05:05 m (wall), 22:20 m (CPU), 31.41 s (system), 21:48 m (user).
+      //
+      // using regression_delta_ppm 3 threads: 
+      //    -- done [took 08:07 m (CPU), 02:49 m (Wall)] --
+      //    OpenSwathWorkflow took 03:52 m (wall), 09:47 m (CPU), 11.67 s (system), 09:35 m (user).
+      // using none 3 threads: 
+      //    -- done [took 08:39 m (CPU), 03:01 m (Wall)] -- 
+      //    OpenSwathWorkflow took 04:25 m (wall), 11:37 m (CPU), 15.26 s (system), 11:22 m (user).
+      // using old code & regression_delta_ppm 3 threads: 
+      //    -- done [took 09:41 m (CPU), 03:26 m (Wall)] --
+      //    OpenSwathWorkflow took 04:19 m (wall), 11:18 m (CPU), 11.05 s (system), 11:07 m (user).
+      //
+      // using openms v 2.4 code & 3 threads: 
+      //    -- done [took 08:37 m (CPU), 03:07 m (Wall)] --
+      //    OpenSwathWorkflow took 05:09 m (wall), 10:22 m (CPU), 11.27 s (system), 10:11 m (user).
+      //
+      // using default params: no MS1, no calibration, fewer peaks
+      //
+      //
+      //
+#if 0
+      // auto it = s->getMZArray()->data.begin();
+      // if (c_ == 0)
+      // {
+      //   for (auto& it : s->getMZArray()->data)
+      //   {
+      //     // mz = a + b * mz + c * mz^2
+      //     double predict = 
+      //       a_ + 
+      //       b_ * it;
+
+      //     // If ppm is true, we predicted the ppm deviation, not the actual new mass
+      //     if (ppm_)
+      //     {
+      //       it = it - predict * it / 1000000;
+      //     }
+      //     else
+      //     {
+      //       it = predict;
+      //     }
+      //   }
+      // }
+
+      // else
+      {
       for (auto& it : s->getMZArray()->data)
       {
         // mz = a + b * mz + c * mz^2
@@ -79,6 +131,30 @@ namespace OpenMS
           it = predict;
         }
       }
+      }
+#else
+      for (size_t i = 0; i < s->getMZArray()->data.size(); i++)
+      {
+        // mz = a + b * mz + c * mz^2
+        double predict = 
+          a_ + 
+          b_ * s->getMZArray()->data[i] +
+          c_ * s->getMZArray()->data[i] * s->getMZArray()->data[i];
+
+        // If ppm is true, we predicted the ppm deviation, not the actual new mass
+        if (ppm_)
+        {
+          s->getMZArray()->data[i] = s->getMZArray()->data[i] - predict*s->getMZArray()->data[i]/1000000;
+        }
+        else
+        {
+          s->getMZArray()->data[i] = predict;
+        }
+      }
+#endif
+      // std::cout << " corrected " << ctr++ << " spectra " << std::endl;
+      //  corrected 97706 spectra  [for     <scan num="50882"
+      //   -> each spectrum is corrected twice ??
       return s;
     }
 

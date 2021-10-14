@@ -82,6 +82,8 @@ void processFeatureForOutput(OpenMS::Feature& curr_feature, bool write_convex_hu
 namespace OpenMS
 {
 
+
+
   MRMFeatureFinderScoring::MRMFeatureFinderScoring() :
     DefaultParamHandler("MRMFeatureFinderScoring"),
     ProgressLogger()
@@ -540,6 +542,8 @@ namespace OpenMS
     for (std::vector<MRMFeature>::iterator mrmfeature = transition_group_detection.getFeaturesMuteable().begin();
          mrmfeature != transition_group_detection.getFeaturesMuteable().end(); ++mrmfeature)
     {
+      // static int nr_steps = 0;
+      // std::cout << " analysing pg " << nr_steps++ << std::endl;
       OpenSwath::IMRMFeature* imrmfeature;
       imrmfeature = new MRMFeatureOpenMS(*mrmfeature);
 
@@ -659,14 +663,48 @@ namespace OpenMS
           std::string precursor_id = transition_group_detection.getPrecursorChromatograms()[i].getNativeID();
           precursor_ids.push_back(precursor_id);
         }
+        /*
+         * total time: -- done [took 53.29 s (CPU), 53.30 s (Wall)] -- 
+         * total time (no prec chr/no ms1 map): -- done [took 48.23 s (CPU), 48.24 s (Wall)] --   
+         * total time (no prec chr/no ms1 map / no ms1_corr): -- done [took 42.46 s (CPU), 42.47 s (Wall)] -- 
+         * total time (no prec chr/no ms1 map / no ms1_corr no ms1_mi): -- done [took 43.00 s (CPU), 43.01 s (Wall)] --   
+         * total time (no prec chr/no ms1 map / no -use_ms1_traces): -- done [took 37.33 s (CPU), 37.35 s (Wall)] --              
 
+         -- done [took 47.70 s (CPU), 47.72 s (Wall)] --  
+         -- done [took 40.58 s (CPU), 40.59 s (Wall)] --  all ms1 stuff brings down analysis by 7 seconds (30% of analysis time)
+*/
+#if 0
+        ms1_map_ = nullptr; // this alone only makes a difference of 1 second -- done [took 46.36 s (CPU), 46.36 s (Wall)] --  
+        precursor_ids.clear();
+        su_.use_ms1_correlation = false;
+        su_.use_ms1_mi = false;
+#endif
+
+        /*
+
+           -- done [took 49.09 s (CPU), 49.10 s (Wall)] --   
+        // precursor_ids.clear(); -- done [took 45.18 s (CPU), 45.19 s (Wall)] -- 
+*/
+        // precursor_ids.clear(); // -- this is maybe 5 seconds
         OpenSwath_Scores& scores = mrmfeature->getScores();
+        // if (false) // -- done [took 40.68 s (CPU), 40.69 s (Wall)] --   this is a total of 5 seconds on top (10 seconds total)
+        {
         scorer.calculateChromatographicScores(imrmfeature, native_ids_detection, precursor_ids, normalized_library_intensity,
-                                              signal_noise_estimators, scores);
+                                               signal_noise_estimators, scores);
+        }
 
+        // library scores
+        //
         double normalized_experimental_rt = trafo.apply(imrmfeature->getRT());
         scorer.calculateLibraryScores(imrmfeature, transition_group_detection.getTransitions(), *pep, normalized_experimental_rt, scores);
-        if (swath_present && su_.use_dia_scores_)
+        /*
+
+      // 1thr, 5SW, MS1+3, no peak-quality:          -- done [took 01:03 m (CPU), 01:03 m (Wall)] --
+      // now: getting rid of this: -- done [took 38.24 s (CPU), 38.26 s (Wall)] --
+      // now: getting rid of this and no MS1+3: -- done [took 23.14 s (CPU), 23.16 s (Wall)] -- 15 seconds are used on precursor MS1 signal somewhere else!
+      //    -> only 3 seconds for all other scores!
+*/
+        if (swath_present && su_.use_dia_scores_) // -- done [took 27.92 s (CPU), 27.97 s (Wall)] --     : this is 13 seconds w/o precursor
         {
           std::vector<double> masserror_ppm;
           scorer.calculateDIAScores(imrmfeature,
@@ -956,6 +994,8 @@ namespace OpenMS
 
       mrmfeature->setMetaValue("PrecursorMZ", precursor_mz);
 
+      // prepareFeatureOutput(*mrmfeature, ms1only, charge);
+
       // Prepare the subordinates for the mrmfeature (process all current
       // features and then append all precursor subordinate features)
       std::vector<Feature> allFeatures = mrmfeature->getFeatures();
@@ -992,6 +1032,7 @@ namespace OpenMS
       mrmfeature->setMetaValue("ms1_area_intensity", ms1_total_intensity);
       mrmfeature->setMetaValue("ms1_apex_intensity", ms1_total_peak_apices);
       mrmfeature->setMetaValue("xx_swath_prelim_score", 0.0);
+
       feature_list.push_back((*mrmfeature));
 
       delete imrmfeature;
@@ -1081,8 +1122,8 @@ namespace OpenMS
       const TransitionType* transition = &transition_exp.getTransitions()[i];
       if (chromatogram_map.find(transition->getNativeID()) == chromatogram_map.end())
       {
-        std::cerr << "Error: Transition " + transition->getNativeID() + " from group " +
-          transition->getPeptideRef() + " does not have a corresponding chromatogram" << std::endl;
+        // std::cerr << "Error: Transition " + transition->getNativeID() + " from group " +
+        //   transition->getPeptideRef() + " does not have a corresponding chromatogram" << std::endl;
         if (strict_)
         {
           throw Exception::IllegalArgument(__FILE__, __LINE__, OPENMS_PRETTY_FUNCTION,
