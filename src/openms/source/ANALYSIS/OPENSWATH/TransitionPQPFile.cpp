@@ -36,6 +36,7 @@
 
 #include <sqlite3.h>
 #include <OpenMS/FORMAT/SqliteConnector.h>
+#include <unordered_map>
 
 namespace OpenMS
 {
@@ -64,6 +65,7 @@ namespace OpenMS
 
   void TransitionPQPFile::readPQPInput_(const char* filename, std::vector<TSVTransition>& transition_list, bool legacy_traml_id)
   {
+    std::cout << " void TransitionPQPFile::readPQPInput_(const char* filename, std::vector<TSVTransition>& transition_list, bool legacy_traml_id) " << std::endl;
     sqlite3 *db;
     sqlite3_stmt * cntstmt;
     sqlite3_stmt * stmt;
@@ -370,9 +372,15 @@ namespace OpenMS
 
     // Index maps
     std::vector<std::string> group_vec, peptide_vec, compound_vec, protein_vec;
+#if 0
     std::map<std::string, int > group_map, peptide_map, compound_map, protein_map, gene_map;
     std::map<int,double> precursor_mz_map;
     std::map<int,bool> precursor_decoy_map;
+#else
+    std::unordered_map<std::string, int > group_map, peptide_map, compound_map, protein_map, gene_map;
+    std::unordered_map<int,double> precursor_mz_map;
+    std::unordered_map<int,bool> precursor_decoy_map;
+#endif
 
     std::stringstream insert_transition_sql, insert_transition_peptide_mapping_sql, insert_transition_precursor_mapping_sql;
     insert_transition_sql.precision(11);
@@ -601,6 +609,7 @@ namespace OpenMS
     std::stringstream insert_compound_sql;
     for (const auto& it : compound_map)
     {
+      // 11.2 GB for assay generator!
       String adducts;
       String compound_name;
       const auto& compound = targeted_exp.getCompoundByRef(it.first);
