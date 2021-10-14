@@ -75,7 +75,8 @@ namespace OpenMS
           << "assay_rt" <<"\t"
           << "delta_rt" << "\t"
           << "leftWidth" <<
-        "\tmain_var_xx_swath_prelim_score\tnorm_RT\tnr_peaks\tpeak_apices_sum\tpotentialOutlier\tinitialPeakQuality" <<
+        "\tmain_var_xx_swath_prelim_score\tnorm_RT\tnr_peaks\tpeak_apices_sum\tpotentialOutlier" <<
+        "\tinitialPeakQuality\tinit_missing_peaks\tinit_shape_score\tinit_coel_score" <<
         "\trightWidth\trt_score\tsn_ratio\ttotal_xic\tvar_bseries_score\tvar_dotprod_score" <<
         "\tvar_intensity_score\tvar_isotope_correlation_score\tvar_isotope_overlap_score" <<
         "\tvar_library_corr\tvar_library_dotprod\tvar_library_manhattan\tvar_library_rmsd" <<
@@ -209,6 +210,15 @@ namespace OpenMS
             + "\t" + (String)feature_it->getMetaValue("peak_apices_sum")
             + "\t" + (String)feature_it->getMetaValue("potentialOutlier")
             + "\t" + (String)feature_it->getMetaValue("initialPeakQuality")
+            + "\t" + (String)feature_it->getMetaValue("init_missing_peaks")
+            + "\t" + (String)feature_it->getMetaValue("init_shape_score")
+            + "\t" + (String)feature_it->getMetaValue("init_coel_score")
+            /*
+               + "\t" + (String)feature_it->getMetaValue("init_xshape_score")
+               + "\t" + (String)feature_it->getMetaValue("init_xcoel_score")
+               */
+
+
             + "\t" + (String)feature_it->getMetaValue("rightWidth")
             + "\t" + (String)feature_it->getMetaValue("rt_score")
             + "\t" + (String)feature_it->getMetaValue("sn_ratio")
