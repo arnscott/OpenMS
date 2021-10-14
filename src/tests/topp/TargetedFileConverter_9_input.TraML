@@ -13,10 +13,11 @@
     </Protein>
   </ProteinList>
   <CompoundList>
-    <Peptide id="19" sequence="KSQSDFLGSR">
+    <Peptide id="1" sequence="KSQSDFLGSR">
       <cvParam cvRef="MS" accession="MS:1000041" name="charge state" value="3"/>
-      <cvParam cvRef="MS" accession="MS:1000893" name="peptide group label" value="NA"/>
+      <cvParam cvRef="MS" accession="MS:1000893" name="peptide group label" value="KSQSDFLGSR_405.52"/>
       <userParam name="full_peptide_name" type="xsd:string" value="KS(UniMod:21)QSDFLGSR(UniMod:267)"/>
+      <userParam name="GeneName" type="xsd:string" value="Gene1"/>
       <ProteinRef ref="DECOY_KLDSGQSSFR"/>
       <Modification location="2" monoisotopicMassDelta="79.966331" averageMassDelta="79.9799">
         <cvParam cvRef="UNIMOD" accession="UNIMOD:21" name="Phospho"/>
@@ -30,10 +31,11 @@
         </RetentionTime>
       </RetentionTimeList>
     </Peptide>
-    <Peptide id="1" sequence="KLDSGQSSFR">
+    <Peptide id="0" sequence="KLDSGQSSFR">
       <cvParam cvRef="MS" accession="MS:1000041" name="charge state" value="3"/>
-      <cvParam cvRef="MS" accession="MS:1000893" name="peptide group label" value="NA"/>
+      <cvParam cvRef="MS" accession="MS:1000893" name="peptide group label" value="KLDSGQSSFR_405.52"/>
       <userParam name="full_peptide_name" type="xsd:string" value="KLDSGQS(UniMod:21)SFR(UniMod:267)"/>
+      <userParam name="GeneName" type="xsd:string" value="Gene2"/>
       <ProteinRef ref="KLDSGQSSFR"/>
       <Modification location="7" monoisotopicMassDelta="79.966331" averageMassDelta="79.9799">
         <cvParam cvRef="UNIMOD" accession="UNIMOD:21" name="Phospho"/>
@@ -49,9 +51,9 @@
     </Peptide>
   </CompoundList>
   <TransitionList>
-    <Transition id="0" peptideRef="19">
+    <Transition id="0" peptideRef="1">
       <Precursor>
-        <cvParam cvRef="MS" accession="MS:1000827" name="isolation window target m/z" value="405.5195" unitCvRef="MS" unitAccession="MS:1000040" unitName="m/z"/>
+        <cvParam cvRef="MS" accession="MS:1000827" name="isolation window target m/z" value="405.519499999999994" unitCvRef="MS" unitAccession="MS:1000040" unitName="m/z"/>
       </Precursor>
       <Product>
         <cvParam cvRef="MS" accession="MS:1000041" name="charge state" value="1"/>
@@ -67,9 +69,9 @@
       <cvParam cvRef="MS" accession="MS:1001226" name="product ion intensity" value="1927.05"/>
       <cvParam cvRef="MS" accession="MS:1002008" name="decoy SRM transition"/>
     </Transition>
-    <Transition id="1" peptideRef="1">
+    <Transition id="1" peptideRef="0">
       <Precursor>
-        <cvParam cvRef="MS" accession="MS:1000827" name="isolation window target m/z" value="405.5195" unitCvRef="MS" unitAccession="MS:1000040" unitName="m/z"/>
+        <cvParam cvRef="MS" accession="MS:1000827" name="isolation window target m/z" value="405.519499999999994" unitCvRef="MS" unitAccession="MS:1000040" unitName="m/z"/>
       </Precursor>
       <Product>
         <cvParam cvRef="MS" accession="MS:1000041" name="charge state" value="2"/>
@@ -89,9 +91,9 @@
       <userParam name="quantifying_transition" type="xsd:boolean" value="false"/>
       <userParam name="Peptidoforms" type="xsd:string" value="IGES(Phospho)NDSSNR(Label:13C(6)15N(4))"/>
     </Transition>
-    <Transition id="2" peptideRef="1">
+    <Transition id="2" peptideRef="0">
       <Precursor>
-        <cvParam cvRef="MS" accession="MS:1000827" name="isolation window target m/z" value="405.5195" unitCvRef="MS" unitAccession="MS:1000040" unitName="m/z"/>
+        <cvParam cvRef="MS" accession="MS:1000827" name="isolation window target m/z" value="405.519499999999994" unitCvRef="MS" unitAccession="MS:1000040" unitName="m/z"/>
       </Precursor>
       <Product>
         <cvParam cvRef="MS" accession="MS:1000041" name="charge state" value="2"/>
@@ -111,9 +113,9 @@
       <userParam name="quantifying_transition" type="xsd:boolean" value="false"/>
       <userParam name="Peptidoforms" type="xsd:string" value="IGESNDSS(Phospho)NR(Label:13C(6)15N(4))"/>
     </Transition>
-    <Transition id="3" peptideRef="1">
+    <Transition id="3" peptideRef="0">
       <Precursor>
-        <cvParam cvRef="MS" accession="MS:1000827" name="isolation window target m/z" value="405.5195" unitCvRef="MS" unitAccession="MS:1000040" unitName="m/z"/>
+        <cvParam cvRef="MS" accession="MS:1000827" name="isolation window target m/z" value="405.519499999999994" unitCvRef="MS" unitAccession="MS:1000040" unitName="m/z"/>
       </Precursor>
       <Product>
         <cvParam cvRef="MS" accession="MS:1000041" name="charge state" value="3"/>
@@ -133,9 +135,9 @@
       <userParam name="quantifying_transition" type="xsd:boolean" value="false"/>
       <userParam name="Peptidoforms" type="xsd:string" value="IGES(Phospho)NDSSNR(Label:13C(6)15N(4))|IGESNDS(Phospho)SNR(Label:13C(6)15N(4))|IGESNDSS(Phospho)NR(Label:13C(6)15N(4))"/>
     </Transition>
-    <Transition id="4" peptideRef="1">
+    <Transition id="4" peptideRef="0">
       <Precursor>
-        <cvParam cvRef="MS" accession="MS:1000827" name="isolation window target m/z" value="405.5195" unitCvRef="MS" unitAccession="MS:1000040" unitName="m/z"/>
+        <cvParam cvRef="MS" accession="MS:1000827" name="isolation window target m/z" value="405.519499999999994" unitCvRef="MS" unitAccession="MS:1000040" unitName="m/z"/>
       </Precursor>
       <Product>
         <cvParam cvRef="MS" accession="MS:1000041" name="charge state" value="2"/>
@@ -155,9 +157,9 @@
       <userParam name="quantifying_transition" type="xsd:boolean" value="false"/>
       <userParam name="Peptidoforms" type="xsd:string" value="KLDS(Phospho)GQSSFR(Label:13C(6)15N(4))"/>
     </Transition>
-    <Transition id="5" peptideRef="1">
+    <Transition id="5" peptideRef="0">
       <Precursor>
-        <cvParam cvRef="MS" accession="MS:1000827" name="isolation window target m/z" value="405.5195" unitCvRef="MS" unitAccession="MS:1000040" unitName="m/z"/>
+        <cvParam cvRef="MS" accession="MS:1000827" name="isolation window target m/z" value="405.519499999999994" unitCvRef="MS" unitAccession="MS:1000040" unitName="m/z"/>
       </Precursor>
       <Product>
         <cvParam cvRef="MS" accession="MS:1000041" name="charge state" value="1"/>
@@ -173,9 +175,9 @@
       <cvParam cvRef="MS" accession="MS:1001226" name="product ion intensity" value="2058.7"/>
       <cvParam cvRef="MS" accession="MS:1002007" name="target SRM transition"/>
     </Transition>
-    <Transition id="6" peptideRef="1">
+    <Transition id="6" peptideRef="0">
       <Precursor>
-        <cvParam cvRef="MS" accession="MS:1000827" name="isolation window target m/z" value="405.5195" unitCvRef="MS" unitAccession="MS:1000040" unitName="m/z"/>
+        <cvParam cvRef="MS" accession="MS:1000827" name="isolation window target m/z" value="405.519499999999994" unitCvRef="MS" unitAccession="MS:1000040" unitName="m/z"/>
       </Precursor>
       <Product>
         <cvParam cvRef="MS" accession="MS:1000041" name="charge state" value="1"/>
@@ -195,9 +197,9 @@
       <userParam name="quantifying_transition" type="xsd:boolean" value="false"/>
       <userParam name="Peptidoforms" type="xsd:string" value="KLDS(Phospho)GQSSFR(Label:13C(6)15N(4))|KLDSGQS(Phospho)SFR(Label:13C(6)15N(4))|KLDSGQSS(Phospho)FR(Label:13C(6)15N(4))"/>
     </Transition>
-    <Transition id="7" peptideRef="1">
+    <Transition id="7" peptideRef="0">
       <Precursor>
-        <cvParam cvRef="MS" accession="MS:1000827" name="isolation window target m/z" value="405.5195" unitCvRef="MS" unitAccession="MS:1000040" unitName="m/z"/>
+        <cvParam cvRef="MS" accession="MS:1000827" name="isolation window target m/z" value="405.519499999999994" unitCvRef="MS" unitAccession="MS:1000040" unitName="m/z"/>
       </Precursor>
       <Product>
         <cvParam cvRef="MS" accession="MS:1000041" name="charge state" value="2"/>
@@ -217,9 +219,9 @@
       <userParam name="quantifying_transition" type="xsd:boolean" value="false"/>
       <userParam name="Peptidoforms" type="xsd:string" value="KLDSGQS(Phospho)SFR(Label:13C(6)15N(4))|KLDSGQSS(Phospho)FR(Label:13C(6)15N(4))"/>
     </Transition>
-    <Transition id="8" peptideRef="1">
+    <Transition id="8" peptideRef="0">
       <Precursor>
-        <cvParam cvRef="MS" accession="MS:1000827" name="isolation window target m/z" value="405.5195" unitCvRef="MS" unitAccession="MS:1000040" unitName="m/z"/>
+        <cvParam cvRef="MS" accession="MS:1000827" name="isolation window target m/z" value="405.519499999999994" unitCvRef="MS" unitAccession="MS:1000040" unitName="m/z"/>
       </Precursor>
       <Product>
         <cvParam cvRef="MS" accession="MS:1000041" name="charge state" value="2"/>
@@ -239,9 +241,9 @@
       <userParam name="quantifying_transition" type="xsd:boolean" value="false"/>
       <userParam name="Peptidoforms" type="xsd:string" value="KLDSGQSS(Phospho)FR(Label:13C(6)15N(4))"/>
     </Transition>
-    <Transition id="9" peptideRef="1">
+    <Transition id="9" peptideRef="0">
       <Precursor>
-        <cvParam cvRef="MS" accession="MS:1000827" name="isolation window target m/z" value="405.5195" unitCvRef="MS" unitAccession="MS:1000040" unitName="m/z"/>
+        <cvParam cvRef="MS" accession="MS:1000827" name="isolation window target m/z" value="405.519499999999994" unitCvRef="MS" unitAccession="MS:1000040" unitName="m/z"/>
       </Precursor>
       <Product>
         <cvParam cvRef="MS" accession="MS:1000041" name="charge state" value="3"/>
@@ -261,9 +263,9 @@
       <userParam name="quantifying_transition" type="xsd:boolean" value="false"/>
       <userParam name="Peptidoforms" type="xsd:string" value="KLDS(Phospho)GQSSFR(Label:13C(6)15N(4))|KLDSGQS(Phospho)SFR(Label:13C(6)15N(4))|KLDSGQSS(Phospho)FR(Label:13C(6)15N(4))"/>
     </Transition>
-    <Transition id="10" peptideRef="1">
+    <Transition id="10" peptideRef="0">
       <Precursor>
-        <cvParam cvRef="MS" accession="MS:1000827" name="isolation window target m/z" value="405.5195" unitCvRef="MS" unitAccession="MS:1000040" unitName="m/z"/>
+        <cvParam cvRef="MS" accession="MS:1000827" name="isolation window target m/z" value="405.519499999999994" unitCvRef="MS" unitAccession="MS:1000040" unitName="m/z"/>
       </Precursor>
       <Product>
         <cvParam cvRef="MS" accession="MS:1000041" name="charge state" value="1"/>
@@ -283,9 +285,9 @@
       <userParam name="quantifying_transition" type="xsd:boolean" value="false"/>
       <userParam name="Peptidoforms" type="xsd:string" value="IGESNDSS(Phospho)NR(Label:13C(6)15N(4))"/>
     </Transition>
-    <Transition id="11" peptideRef="1">
+    <Transition id="11" peptideRef="0">
       <Precursor>
-        <cvParam cvRef="MS" accession="MS:1000827" name="isolation window target m/z" value="405.5195" unitCvRef="MS" unitAccession="MS:1000040" unitName="m/z"/>
+        <cvParam cvRef="MS" accession="MS:1000827" name="isolation window target m/z" value="405.519499999999994" unitCvRef="MS" unitAccession="MS:1000040" unitName="m/z"/>
       </Precursor>
       <Product>
         <cvParam cvRef="MS" accession="MS:1000041" name="charge state" value="1"/>
@@ -305,9 +307,9 @@
       <userParam name="quantifying_transition" type="xsd:boolean" value="false"/>
       <userParam name="Peptidoforms" type="xsd:string" value="IGES(Phospho)NDSSNR(Label:13C(6)15N(4))"/>
     </Transition>
-    <Transition id="12" peptideRef="1">
+    <Transition id="12" peptideRef="0">
       <Precursor>
-        <cvParam cvRef="MS" accession="MS:1000827" name="isolation window target m/z" value="405.5195" unitCvRef="MS" unitAccession="MS:1000040" unitName="m/z"/>
+        <cvParam cvRef="MS" accession="MS:1000827" name="isolation window target m/z" value="405.519499999999994" unitCvRef="MS" unitAccession="MS:1000040" unitName="m/z"/>
       </Precursor>
       <Product>
         <cvParam cvRef="MS" accession="MS:1000041" name="charge state" value="2"/>
@@ -327,9 +329,9 @@
       <userParam name="quantifying_transition" type="xsd:boolean" value="false"/>
       <userParam name="Peptidoforms" type="xsd:string" value="KLDS(Phospho)GQSSFR(Label:13C(6)15N(4))|KLDSGQS(Phospho)SFR(Label:13C(6)15N(4))|KLDSGQSS(Phospho)FR(Label:13C(6)15N(4))"/>
     </Transition>
-    <Transition id="13" peptideRef="1">
+    <Transition id="13" peptideRef="0">
       <Precursor>
-        <cvParam cvRef="MS" accession="MS:1000827" name="isolation window target m/z" value="405.5195" unitCvRef="MS" unitAccession="MS:1000040" unitName="m/z"/>
+        <cvParam cvRef="MS" accession="MS:1000827" name="isolation window target m/z" value="405.519499999999994" unitCvRef="MS" unitAccession="MS:1000040" unitName="m/z"/>
       </Precursor>
       <Product>
         <cvParam cvRef="MS" accession="MS:1000041" name="charge state" value="2"/>
@@ -349,9 +351,9 @@
       <userParam name="quantifying_transition" type="xsd:boolean" value="false"/>
       <userParam name="Peptidoforms" type="xsd:string" value="KLDSGQS(Phospho)SFR(Label:13C(6)15N(4))|KLDSGQSS(Phospho)FR(Label:13C(6)15N(4))"/>
     </Transition>
-    <Transition id="14" peptideRef="1">
+    <Transition id="14" peptideRef="0">
       <Precursor>
-        <cvParam cvRef="MS" accession="MS:1000827" name="isolation window target m/z" value="405.5195" unitCvRef="MS" unitAccession="MS:1000040" unitName="m/z"/>
+        <cvParam cvRef="MS" accession="MS:1000827" name="isolation window target m/z" value="405.519499999999994" unitCvRef="MS" unitAccession="MS:1000040" unitName="m/z"/>
       </Precursor>
       <Product>
         <cvParam cvRef="MS" accession="MS:1000041" name="charge state" value="1"/>
@@ -371,9 +373,9 @@
       <userParam name="quantifying_transition" type="xsd:boolean" value="false"/>
       <userParam name="Peptidoforms" type="xsd:string" value="IGES(Phospho)NDSSNR(Label:13C(6)15N(4))|IGESNDS(Phospho)SNR(Label:13C(6)15N(4))"/>
     </Transition>
-    <Transition id="15" peptideRef="1">
+    <Transition id="15" peptideRef="0">
       <Precursor>
-        <cvParam cvRef="MS" accession="MS:1000827" name="isolation window target m/z" value="405.5195" unitCvRef="MS" unitAccession="MS:1000040" unitName="m/z"/>
+        <cvParam cvRef="MS" accession="MS:1000827" name="isolation window target m/z" value="405.519499999999994" unitCvRef="MS" unitAccession="MS:1000040" unitName="m/z"/>
       </Precursor>
       <Product>
         <cvParam cvRef="MS" accession="MS:1000041" name="charge state" value="2"/>
@@ -393,9 +395,9 @@
       <userParam name="quantifying_transition" type="xsd:boolean" value="false"/>
       <userParam name="Peptidoforms" type="xsd:string" value="IGES(Phospho)NDSSNR(Label:13C(6)15N(4))|IGESNDS(Phospho)SNR(Label:13C(6)15N(4))|IGESNDSS(Phospho)NR(Label:13C(6)15N(4))"/>
     </Transition>
-    <Transition id="16" peptideRef="1">
+    <Transition id="16" peptideRef="0">
       <Precursor>
-        <cvParam cvRef="MS" accession="MS:1000827" name="isolation window target m/z" value="405.5195" unitCvRef="MS" unitAccession="MS:1000040" unitName="m/z"/>
+        <cvParam cvRef="MS" accession="MS:1000827" name="isolation window target m/z" value="405.519499999999994" unitCvRef="MS" unitAccession="MS:1000040" unitName="m/z"/>
       </Precursor>
       <Product>
         <cvParam cvRef="MS" accession="MS:1000041" name="charge state" value="1"/>
@@ -415,9 +417,9 @@
       <userParam name="quantifying_transition" type="xsd:boolean" value="false"/>
       <userParam name="Peptidoforms" type="xsd:string" value="IGESNDS(Phospho)SNR(Label:13C(6)15N(4))|IGESNDSS(Phospho)NR(Label:13C(6)15N(4))"/>
     </Transition>
-    <Transition id="17" peptideRef="1">
+    <Transition id="17" peptideRef="0">
       <Precursor>
-        <cvParam cvRef="MS" accession="MS:1000827" name="isolation window target m/z" value="405.5195" unitCvRef="MS" unitAccession="MS:1000040" unitName="m/z"/>
+        <cvParam cvRef="MS" accession="MS:1000827" name="isolation window target m/z" value="405.519499999999994" unitCvRef="MS" unitAccession="MS:1000040" unitName="m/z"/>
       </Precursor>
       <Product>
         <cvParam cvRef="MS" accession="MS:1000041" name="charge state" value="2"/>
@@ -437,9 +439,9 @@
       <userParam name="quantifying_transition" type="xsd:boolean" value="false"/>
       <userParam name="Peptidoforms" type="xsd:string" value="IGESNDS(Phospho)SNR(Label:13C(6)15N(4))|IGESNDSS(Phospho)NR(Label:13C(6)15N(4))"/>
     </Transition>
-    <Transition id="18" peptideRef="1">
+    <Transition id="18" peptideRef="0">
       <Precursor>
-        <cvParam cvRef="MS" accession="MS:1000827" name="isolation window target m/z" value="405.5195" unitCvRef="MS" unitAccession="MS:1000040" unitName="m/z"/>
+        <cvParam cvRef="MS" accession="MS:1000827" name="isolation window target m/z" value="405.519499999999994" unitCvRef="MS" unitAccession="MS:1000040" unitName="m/z"/>
       </Precursor>
       <Product>
         <cvParam cvRef="MS" accession="MS:1000041" name="charge state" value="2"/>
@@ -459,9 +461,9 @@
       <userParam name="quantifying_transition" type="xsd:boolean" value="false"/>
       <userParam name="Peptidoforms" type="xsd:string" value="IGES(Phospho)NDSSNR(Label:13C(6)15N(4))|IGESNDS(Phospho)SNR(Label:13C(6)15N(4))"/>
     </Transition>
-    <Transition id="19" peptideRef="1">
+    <Transition id="19" peptideRef="0">
       <Precursor>
-        <cvParam cvRef="MS" accession="MS:1000827" name="isolation window target m/z" value="405.5195" unitCvRef="MS" unitAccession="MS:1000040" unitName="m/z"/>
+        <cvParam cvRef="MS" accession="MS:1000827" name="isolation window target m/z" value="405.519499999999994" unitCvRef="MS" unitAccession="MS:1000040" unitName="m/z"/>
       </Precursor>
       <Product>
         <cvParam cvRef="MS" accession="MS:1000041" name="charge state" value="2"/>
@@ -481,9 +483,9 @@
       <userParam name="quantifying_transition" type="xsd:boolean" value="false"/>
       <userParam name="Peptidoforms" type="xsd:string" value="KLDS(Phospho)GQSSFR(Label:13C(6)15N(4))|KLDSGQS(Phospho)SFR(Label:13C(6)15N(4))|KLDSGQSS(Phospho)FR(Label:13C(6)15N(4))"/>
     </Transition>
-    <Transition id="20" peptideRef="1">
+    <Transition id="20" peptideRef="0">
       <Precursor>
-        <cvParam cvRef="MS" accession="MS:1000827" name="isolation window target m/z" value="405.5195" unitCvRef="MS" unitAccession="MS:1000040" unitName="m/z"/>
+        <cvParam cvRef="MS" accession="MS:1000827" name="isolation window target m/z" value="405.519499999999994" unitCvRef="MS" unitAccession="MS:1000040" unitName="m/z"/>
       </Precursor>
       <Product>
         <cvParam cvRef="MS" accession="MS:1000041" name="charge state" value="2"/>
@@ -503,9 +505,9 @@
       <userParam name="quantifying_transition" type="xsd:boolean" value="false"/>
       <userParam name="Peptidoforms" type="xsd:string" value="KLDS(Phospho)GQSSFR(Label:13C(6)15N(4))|KLDSGQS(Phospho)SFR(Label:13C(6)15N(4))"/>
     </Transition>
-    <Transition id="21" peptideRef="1">
+    <Transition id="21" peptideRef="0">
       <Precursor>
-        <cvParam cvRef="MS" accession="MS:1000827" name="isolation window target m/z" value="405.5195" unitCvRef="MS" unitAccession="MS:1000040" unitName="m/z"/>
+        <cvParam cvRef="MS" accession="MS:1000827" name="isolation window target m/z" value="405.519499999999994" unitCvRef="MS" unitAccession="MS:1000040" unitName="m/z"/>
       </Precursor>
       <Product>
         <cvParam cvRef="MS" accession="MS:1000041" name="charge state" value="1"/>
@@ -525,9 +527,9 @@
       <userParam name="quantifying_transition" type="xsd:boolean" value="false"/>
       <userParam name="Peptidoforms" type="xsd:string" value="KLDSGQSS(Phospho)FR(Label:13C(6)15N(4))"/>
     </Transition>
-    <Transition id="22" peptideRef="1">
+    <Transition id="22" peptideRef="0">
       <Precursor>
-        <cvParam cvRef="MS" accession="MS:1000827" name="isolation window target m/z" value="405.5195" unitCvRef="MS" unitAccession="MS:1000040" unitName="m/z"/>
+        <cvParam cvRef="MS" accession="MS:1000827" name="isolation window target m/z" value="405.519499999999994" unitCvRef="MS" unitAccession="MS:1000040" unitName="m/z"/>
       </Precursor>
       <Product>
         <cvParam cvRef="MS" accession="MS:1000041" name="charge state" value="1"/>
@@ -540,9 +542,9 @@
       <userParam name="quantifying_transition" type="xsd:boolean" value="false"/>
       <userParam name="Peptidoforms" type="xsd:string" value="KLDS(Phospho)GQSSFR(Label:13C(6)15N(4))|KLDSGQS(Phospho)SFR(Label:13C(6)15N(4))|KLDSGQSS(Phospho)FR(Label:13C(6)15N(4))"/>
     </Transition>
-    <Transition id="23" peptideRef="1">
+    <Transition id="23" peptideRef="0">
       <Precursor>
-        <cvParam cvRef="MS" accession="MS:1000827" name="isolation window target m/z" value="405.5195" unitCvRef="MS" unitAccession="MS:1000040" unitName="m/z"/>
+        <cvParam cvRef="MS" accession="MS:1000827" name="isolation window target m/z" value="405.519499999999994" unitCvRef="MS" unitAccession="MS:1000040" unitName="m/z"/>
       </Precursor>
       <Product>
         <cvParam cvRef="MS" accession="MS:1000041" name="charge state" value="1"/>
@@ -558,9 +560,9 @@
       <cvParam cvRef="MS" accession="MS:1001226" name="product ion intensity" value="1927.05"/>
       <cvParam cvRef="MS" accession="MS:1002007" name="target SRM transition"/>
     </Transition>
-    <Transition id="24" peptideRef="1">
+    <Transition id="24" peptideRef="0">
       <Precursor>
-        <cvParam cvRef="MS" accession="MS:1000827" name="isolation window target m/z" value="405.5195" unitCvRef="MS" unitAccession="MS:1000040" unitName="m/z"/>
+        <cvParam cvRef="MS" accession="MS:1000827" name="isolation window target m/z" value="405.519499999999994" unitCvRef="MS" unitAccession="MS:1000040" unitName="m/z"/>
       </Precursor>
       <Product>
         <cvParam cvRef="MS" accession="MS:1000041" name="charge state" value="1"/>
@@ -580,9 +582,9 @@
       <userParam name="quantifying_transition" type="xsd:boolean" value="false"/>
       <userParam name="Peptidoforms" type="xsd:string" value="KLDS(Phospho)GQSSFR(Label:13C(6)15N(4))|KLDSGQS(Phospho)SFR(Label:13C(6)15N(4))"/>
     </Transition>
-    <Transition id="25" peptideRef="19">
+    <Transition id="25" peptideRef="1">
       <Precursor>
-        <cvParam cvRef="MS" accession="MS:1000827" name="isolation window target m/z" value="405.5195" unitCvRef="MS" unitAccession="MS:1000040" unitName="m/z"/>
+        <cvParam cvRef="MS" accession="MS:1000827" name="isolation window target m/z" value="405.519499999999994" unitCvRef="MS" unitAccession="MS:1000040" unitName="m/z"/>
       </Precursor>
       <Product>
         <cvParam cvRef="MS" accession="MS:1000041" name="charge state" value="1"/>
@@ -598,9 +600,9 @@
       <cvParam cvRef="MS" accession="MS:1001226" name="product ion intensity" value="2058.7"/>
       <cvParam cvRef="MS" accession="MS:1002008" name="decoy SRM transition"/>
     </Transition>
-    <Transition id="26" peptideRef="1">
+    <Transition id="26" peptideRef="0">
       <Precursor>
-        <cvParam cvRef="MS" accession="MS:1000827" name="isolation window target m/z" value="405.5195" unitCvRef="MS" unitAccession="MS:1000040" unitName="m/z"/>
+        <cvParam cvRef="MS" accession="MS:1000827" name="isolation window target m/z" value="405.519499999999994" unitCvRef="MS" unitAccession="MS:1000040" unitName="m/z"/>
       </Precursor>
       <Product>
         <cvParam cvRef="MS" accession="MS:1000041" name="charge state" value="1"/>
@@ -620,9 +622,9 @@
       <userParam name="quantifying_transition" type="xsd:boolean" value="false"/>
       <userParam name="Peptidoforms" type="xsd:string" value="KLDS(Phospho)GQSSFR(Label:13C(6)15N(4))"/>
     </Transition>
-    <Transition id="27" peptideRef="1">
+    <Transition id="27" peptideRef="0">
       <Precursor>
-        <cvParam cvRef="MS" accession="MS:1000827" name="isolation window target m/z" value="405.5195" unitCvRef="MS" unitAccession="MS:1000040" unitName="m/z"/>
+        <cvParam cvRef="MS" accession="MS:1000827" name="isolation window target m/z" value="405.519499999999994" unitCvRef="MS" unitAccession="MS:1000040" unitName="m/z"/>
       </Precursor>
       <Product>
         <cvParam cvRef="MS" accession="MS:1000041" name="charge state" value="2"/>
@@ -642,9 +644,9 @@
       <userParam name="quantifying_transition" type="xsd:boolean" value="false"/>
       <userParam name="Peptidoforms" type="xsd:string" value="KLDS(Phospho)GQSSFR(Label:13C(6)15N(4))|KLDSGQS(Phospho)SFR(Label:13C(6)15N(4))|KLDSGQSS(Phospho)FR(Label:13C(6)15N(4))"/>
     </Transition>
-    <Transition id="28" peptideRef="1">
+    <Transition id="28" peptideRef="0">
       <Precursor>
-        <cvParam cvRef="MS" accession="MS:1000827" name="isolation window target m/z" value="405.5195" unitCvRef="MS" unitAccession="MS:1000040" unitName="m/z"/>
+        <cvParam cvRef="MS" accession="MS:1000827" name="isolation window target m/z" value="405.519499999999994" unitCvRef="MS" unitAccession="MS:1000040" unitName="m/z"/>
       </Precursor>
       <Product>
         <cvParam cvRef="MS" accession="MS:1000041" name="charge state" value="2"/>
@@ -664,9 +666,9 @@
       <userParam name="quantifying_transition" type="xsd:boolean" value="false"/>
       <userParam name="Peptidoforms" type="xsd:string" value="IGES(Phospho)NDSSNR(Label:13C(6)15N(4))|IGESNDS(Phospho)SNR(Label:13C(6)15N(4))|IGESNDSS(Phospho)NR(Label:13C(6)15N(4))"/>
     </Transition>
-    <Transition id="29" peptideRef="1">
+    <Transition id="29" peptideRef="0">
       <Precursor>
-        <cvParam cvRef="MS" accession="MS:1000827" name="isolation window target m/z" value="405.5195" unitCvRef="MS" unitAccession="MS:1000040" unitName="m/z"/>
+        <cvParam cvRef="MS" accession="MS:1000827" name="isolation window target m/z" value="405.519499999999994" unitCvRef="MS" unitAccession="MS:1000040" unitName="m/z"/>
       </Precursor>
       <Product>
         <cvParam cvRef="MS" accession="MS:1000041" name="charge state" value="2"/>
@@ -686,9 +688,9 @@
       <userParam name="quantifying_transition" type="xsd:boolean" value="false"/>
       <userParam name="Peptidoforms" type="xsd:string" value="IGES(Phospho)NDSSNR(Label:13C(6)15N(4))|IGESNDS(Phospho)SNR(Label:13C(6)15N(4))|IGESNDSS(Phospho)NR(Label:13C(6)15N(4))"/>
     </Transition>
-    <Transition id="30" peptideRef="1">
+    <Transition id="30" peptideRef="0">
       <Precursor>
-        <cvParam cvRef="MS" accession="MS:1000827" name="isolation window target m/z" value="405.5195" unitCvRef="MS" unitAccession="MS:1000040" unitName="m/z"/>
+        <cvParam cvRef="MS" accession="MS:1000827" name="isolation window target m/z" value="405.519499999999994" unitCvRef="MS" unitAccession="MS:1000040" unitName="m/z"/>
       </Precursor>
       <Product>
         <cvParam cvRef="MS" accession="MS:1000041" name="charge state" value="2"/>
@@ -708,9 +710,9 @@
       <userParam name="quantifying_transition" type="xsd:boolean" value="false"/>
       <userParam name="Peptidoforms" type="xsd:string" value="KLDS(Phospho)GQSSFR(Label:13C(6)15N(4))|KLDSGQS(Phospho)SFR(Label:13C(6)15N(4))|KLDSGQSS(Phospho)FR(Label:13C(6)15N(4))"/>
     </Transition>
-    <Transition id="31" peptideRef="1">
+    <Transition id="31" peptideRef="0">
       <Precursor>
-        <cvParam cvRef="MS" accession="MS:1000827" name="isolation window target m/z" value="405.5195" unitCvRef="MS" unitAccession="MS:1000040" unitName="m/z"/>
+        <cvParam cvRef="MS" accession="MS:1000827" name="isolation window target m/z" value="405.519499999999994" unitCvRef="MS" unitAccession="MS:1000040" unitName="m/z"/>
       </Precursor>
       <Product>
         <cvParam cvRef="MS" accession="MS:1000041" name="charge state" value="2"/>
@@ -730,9 +732,9 @@
       <userParam name="quantifying_transition" type="xsd:boolean" value="false"/>
       <userParam name="Peptidoforms" type="xsd:string" value="KLDS(Phospho)GQSSFR(Label:13C(6)15N(4))|KLDSGQS(Phospho)SFR(Label:13C(6)15N(4))|KLDSGQSS(Phospho)FR(Label:13C(6)15N(4))"/>
     </Transition>
-    <Transition id="32" peptideRef="19">
+    <Transition id="32" peptideRef="1">
       <Precursor>
-        <cvParam cvRef="MS" accession="MS:1000827" name="isolation window target m/z" value="405.5195" unitCvRef="MS" unitAccession="MS:1000040" unitName="m/z"/>
+        <cvParam cvRef="MS" accession="MS:1000827" name="isolation window target m/z" value="405.519499999999994" unitCvRef="MS" unitAccession="MS:1000040" unitName="m/z"/>
       </Precursor>
       <Product>
         <cvParam cvRef="MS" accession="MS:1000041" name="charge state" value="1"/>
@@ -748,9 +750,9 @@
       <cvParam cvRef="MS" accession="MS:1001226" name="product ion intensity" value="1912.6"/>
       <cvParam cvRef="MS" accession="MS:1002008" name="decoy SRM transition"/>
     </Transition>
-    <Transition id="33" peptideRef="1">
+    <Transition id="33" peptideRef="0">
       <Precursor>
-        <cvParam cvRef="MS" accession="MS:1000827" name="isolation window target m/z" value="405.5195" unitCvRef="MS" unitAccession="MS:1000040" unitName="m/z"/>
+        <cvParam cvRef="MS" accession="MS:1000827" name="isolation window target m/z" value="405.519499999999994" unitCvRef="MS" unitAccession="MS:1000040" unitName="m/z"/>
       </Precursor>
       <Product>
         <cvParam cvRef="MS" accession="MS:1000041" name="charge state" value="2"/>
@@ -770,9 +772,9 @@
       <userParam name="quantifying_transition" type="xsd:boolean" value="false"/>
       <userParam name="Peptidoforms" type="xsd:string" value="IGES(Phospho)NDSSNR(Label:13C(6)15N(4))|IGESNDS(Phospho)SNR(Label:13C(6)15N(4))|IGESNDSS(Phospho)NR(Label:13C(6)15N(4))"/>
     </Transition>
-    <Transition id="34" peptideRef="1">
+    <Transition id="34" peptideRef="0">
       <Precursor>
-        <cvParam cvRef="MS" accession="MS:1000827" name="isolation window target m/z" value="405.5195" unitCvRef="MS" unitAccession="MS:1000040" unitName="m/z"/>
+        <cvParam cvRef="MS" accession="MS:1000827" name="isolation window target m/z" value="405.519499999999994" unitCvRef="MS" unitAccession="MS:1000040" unitName="m/z"/>
       </Precursor>
       <Product>
         <cvParam cvRef="MS" accession="MS:1000041" name="charge state" value="1"/>
@@ -788,9 +790,9 @@
       <cvParam cvRef="MS" accession="MS:1001226" name="product ion intensity" value="1026.51"/>
       <cvParam cvRef="MS" accession="MS:1002007" name="target SRM transition"/>
     </Transition>
-    <Transition id="35" peptideRef="1">
+    <Transition id="35" peptideRef="0">
       <Precursor>
-        <cvParam cvRef="MS" accession="MS:1000827" name="isolation window target m/z" value="405.5195" unitCvRef="MS" unitAccession="MS:1000040" unitName="m/z"/>
+        <cvParam cvRef="MS" accession="MS:1000827" name="isolation window target m/z" value="405.519499999999994" unitCvRef="MS" unitAccession="MS:1000040" unitName="m/z"/>
       </Precursor>
       <Product>
         <cvParam cvRef="MS" accession="MS:1000041" name="charge state" value="1"/>
@@ -810,9 +812,9 @@
       <userParam name="quantifying_transition" type="xsd:boolean" value="false"/>
       <userParam name="Peptidoforms" type="xsd:string" value="KLDSGQS(Phospho)SFR(Label:13C(6)15N(4))|KLDSGQSS(Phospho)FR(Label:13C(6)15N(4))"/>
     </Transition>
-    <Transition id="36" peptideRef="1">
+    <Transition id="36" peptideRef="0">
       <Precursor>
-        <cvParam cvRef="MS" accession="MS:1000827" name="isolation window target m/z" value="405.5195" unitCvRef="MS" unitAccession="MS:1000040" unitName="m/z"/>
+        <cvParam cvRef="MS" accession="MS:1000827" name="isolation window target m/z" value="405.519499999999994" unitCvRef="MS" unitAccession="MS:1000040" unitName="m/z"/>
       </Precursor>
       <Product>
         <cvParam cvRef="MS" accession="MS:1000041" name="charge state" value="2"/>
@@ -832,9 +834,9 @@
       <userParam name="quantifying_transition" type="xsd:boolean" value="false"/>
       <userParam name="Peptidoforms" type="xsd:string" value="IGES(Phospho)NDSSNR(Label:13C(6)15N(4))|IGESNDS(Phospho)SNR(Label:13C(6)15N(4))|IGESNDSS(Phospho)NR(Label:13C(6)15N(4))"/>
     </Transition>
-    <Transition id="37" peptideRef="1">
+    <Transition id="37" peptideRef="0">
       <Precursor>
-        <cvParam cvRef="MS" accession="MS:1000827" name="isolation window target m/z" value="405.5195" unitCvRef="MS" unitAccession="MS:1000040" unitName="m/z"/>
+        <cvParam cvRef="MS" accession="MS:1000827" name="isolation window target m/z" value="405.519499999999994" unitCvRef="MS" unitAccession="MS:1000040" unitName="m/z"/>
       </Precursor>
       <Product>
         <cvParam cvRef="MS" accession="MS:1000041" name="charge state" value="1"/>
@@ -854,9 +856,9 @@
       <userParam name="quantifying_transition" type="xsd:boolean" value="false"/>
       <userParam name="Peptidoforms" type="xsd:string" value="IGESNDS(Phospho)SNR(Label:13C(6)15N(4))|IGESNDSS(Phospho)NR(Label:13C(6)15N(4))"/>
     </Transition>
-    <Transition id="38" peptideRef="1">
+    <Transition id="38" peptideRef="0">
       <Precursor>
-        <cvParam cvRef="MS" accession="MS:1000827" name="isolation window target m/z" value="405.5195" unitCvRef="MS" unitAccession="MS:1000040" unitName="m/z"/>
+        <cvParam cvRef="MS" accession="MS:1000827" name="isolation window target m/z" value="405.519499999999994" unitCvRef="MS" unitAccession="MS:1000040" unitName="m/z"/>
       </Precursor>
       <Product>
         <cvParam cvRef="MS" accession="MS:1000041" name="charge state" value="1"/>
@@ -876,9 +878,9 @@
       <userParam name="quantifying_transition" type="xsd:boolean" value="false"/>
       <userParam name="Peptidoforms" type="xsd:string" value="IGESNDSS(Phospho)NR(Label:13C(6)15N(4))"/>
     </Transition>
-    <Transition id="39" peptideRef="1">
+    <Transition id="39" peptideRef="0">
       <Precursor>
-        <cvParam cvRef="MS" accession="MS:1000827" name="isolation window target m/z" value="405.5195" unitCvRef="MS" unitAccession="MS:1000040" unitName="m/z"/>
+        <cvParam cvRef="MS" accession="MS:1000827" name="isolation window target m/z" value="405.519499999999994" unitCvRef="MS" unitAccession="MS:1000040" unitName="m/z"/>
       </Precursor>
       <Product>
         <cvParam cvRef="MS" accession="MS:1000041" name="charge state" value="2"/>
@@ -898,9 +900,9 @@
       <userParam name="quantifying_transition" type="xsd:boolean" value="false"/>
       <userParam name="Peptidoforms" type="xsd:string" value="KLDS(Phospho)GQSSFR(Label:13C(6)15N(4))|KLDSGQS(Phospho)SFR(Label:13C(6)15N(4))|KLDSGQSS(Phospho)FR(Label:13C(6)15N(4))"/>
     </Transition>
-    <Transition id="40" peptideRef="1">
+    <Transition id="40" peptideRef="0">
       <Precursor>
-        <cvParam cvRef="MS" accession="MS:1000827" name="isolation window target m/z" value="405.5195" unitCvRef="MS" unitAccession="MS:1000040" unitName="m/z"/>
+        <cvParam cvRef="MS" accession="MS:1000827" name="isolation window target m/z" value="405.519499999999994" unitCvRef="MS" unitAccession="MS:1000040" unitName="m/z"/>
       </Precursor>
       <Product>
         <cvParam cvRef="MS" accession="MS:1000041" name="charge state" value="1"/>
@@ -920,9 +922,9 @@
       <userParam name="quantifying_transition" type="xsd:boolean" value="false"/>
       <userParam name="Peptidoforms" type="xsd:string" value="IGES(Phospho)NDSSNR(Label:13C(6)15N(4))"/>
     </Transition>
-    <Transition id="41" peptideRef="1">
+    <Transition id="41" peptideRef="0">
       <Precursor>
-        <cvParam cvRef="MS" accession="MS:1000827" name="isolation window target m/z" value="405.5195" unitCvRef="MS" unitAccession="MS:1000040" unitName="m/z"/>
+        <cvParam cvRef="MS" accession="MS:1000827" name="isolation window target m/z" value="405.519499999999994" unitCvRef="MS" unitAccession="MS:1000040" unitName="m/z"/>
       </Precursor>
       <Product>
         <cvParam cvRef="MS" accession="MS:1000041" name="charge state" value="1"/>
@@ -942,9 +944,9 @@
       <userParam name="quantifying_transition" type="xsd:boolean" value="false"/>
       <userParam name="Peptidoforms" type="xsd:string" value="IGES(Phospho)NDSSNR(Label:13C(6)15N(4))"/>
     </Transition>
-    <Transition id="42" peptideRef="1">
+    <Transition id="42" peptideRef="0">
       <Precursor>
-        <cvParam cvRef="MS" accession="MS:1000827" name="isolation window target m/z" value="405.5195" unitCvRef="MS" unitAccession="MS:1000040" unitName="m/z"/>
+        <cvParam cvRef="MS" accession="MS:1000827" name="isolation window target m/z" value="405.519499999999994" unitCvRef="MS" unitAccession="MS:1000040" unitName="m/z"/>
       </Precursor>
       <Product>
         <cvParam cvRef="MS" accession="MS:1000041" name="charge state" value="2"/>
@@ -964,9 +966,9 @@
       <userParam name="quantifying_transition" type="xsd:boolean" value="false"/>
       <userParam name="Peptidoforms" type="xsd:string" value="IGES(Phospho)NDSSNR(Label:13C(6)15N(4))|IGESNDS(Phospho)SNR(Label:13C(6)15N(4))|IGESNDSS(Phospho)NR(Label:13C(6)15N(4))"/>
     </Transition>
-    <Transition id="43" peptideRef="1">
+    <Transition id="43" peptideRef="0">
       <Precursor>
-        <cvParam cvRef="MS" accession="MS:1000827" name="isolation window target m/z" value="405.5195" unitCvRef="MS" unitAccession="MS:1000040" unitName="m/z"/>
+        <cvParam cvRef="MS" accession="MS:1000827" name="isolation window target m/z" value="405.519499999999994" unitCvRef="MS" unitAccession="MS:1000040" unitName="m/z"/>
       </Precursor>
       <Product>
         <cvParam cvRef="MS" accession="MS:1000041" name="charge state" value="1"/>
@@ -986,9 +988,9 @@
       <userParam name="quantifying_transition" type="xsd:boolean" value="false"/>
       <userParam name="Peptidoforms" type="xsd:string" value="IGES(Phospho)NDSSNR(Label:13C(6)15N(4))"/>
     </Transition>
-    <Transition id="44" peptideRef="1">
+    <Transition id="44" peptideRef="0">
       <Precursor>
-        <cvParam cvRef="MS" accession="MS:1000827" name="isolation window target m/z" value="405.5195" unitCvRef="MS" unitAccession="MS:1000040" unitName="m/z"/>
+        <cvParam cvRef="MS" accession="MS:1000827" name="isolation window target m/z" value="405.519499999999994" unitCvRef="MS" unitAccession="MS:1000040" unitName="m/z"/>
       </Precursor>
       <Product>
         <cvParam cvRef="MS" accession="MS:1000041" name="charge state" value="1"/>
@@ -1008,9 +1010,9 @@
       <userParam name="quantifying_transition" type="xsd:boolean" value="false"/>
       <userParam name="Peptidoforms" type="xsd:string" value="KLDS(Phospho)GQSSFR(Label:13C(6)15N(4))"/>
     </Transition>
-    <Transition id="45" peptideRef="1">
+    <Transition id="45" peptideRef="0">
       <Precursor>
-        <cvParam cvRef="MS" accession="MS:1000827" name="isolation window target m/z" value="405.5195" unitCvRef="MS" unitAccession="MS:1000040" unitName="m/z"/>
+        <cvParam cvRef="MS" accession="MS:1000827" name="isolation window target m/z" value="405.519499999999994" unitCvRef="MS" unitAccession="MS:1000040" unitName="m/z"/>
       </Precursor>
       <Product>
         <cvParam cvRef="MS" accession="MS:1000041" name="charge state" value="2"/>
@@ -1030,9 +1032,9 @@
       <userParam name="quantifying_transition" type="xsd:boolean" value="false"/>
       <userParam name="Peptidoforms" type="xsd:string" value="KLDS(Phospho)GQSSFR(Label:13C(6)15N(4))|KLDSGQS(Phospho)SFR(Label:13C(6)15N(4))|KLDSGQSS(Phospho)FR(Label:13C(6)15N(4))"/>
     </Transition>
-    <Transition id="46" peptideRef="1">
+    <Transition id="46" peptideRef="0">
       <Precursor>
-        <cvParam cvRef="MS" accession="MS:1000827" name="isolation window target m/z" value="405.5195" unitCvRef="MS" unitAccession="MS:1000040" unitName="m/z"/>
+        <cvParam cvRef="MS" accession="MS:1000827" name="isolation window target m/z" value="405.519499999999994" unitCvRef="MS" unitAccession="MS:1000040" unitName="m/z"/>
       </Precursor>
       <Product>
         <cvParam cvRef="MS" accession="MS:1000041" name="charge state" value="1"/>
@@ -1052,9 +1054,9 @@
       <userParam name="quantifying_transition" type="xsd:boolean" value="false"/>
       <userParam name="Peptidoforms" type="xsd:string" value="KLDSGQS(Phospho)SFR(Label:13C(6)15N(4))|KLDSGQSS(Phospho)FR(Label:13C(6)15N(4))"/>
     </Transition>
-    <Transition id="47" peptideRef="1">
+    <Transition id="47" peptideRef="0">
       <Precursor>
-        <cvParam cvRef="MS" accession="MS:1000827" name="isolation window target m/z" value="405.5195" unitCvRef="MS" unitAccession="MS:1000040" unitName="m/z"/>
+        <cvParam cvRef="MS" accession="MS:1000827" name="isolation window target m/z" value="405.519499999999994" unitCvRef="MS" unitAccession="MS:1000040" unitName="m/z"/>
       </Precursor>
       <Product>
         <cvParam cvRef="MS" accession="MS:1000041" name="charge state" value="2"/>
@@ -1074,9 +1076,9 @@
       <userParam name="quantifying_transition" type="xsd:boolean" value="false"/>
       <userParam name="Peptidoforms" type="xsd:string" value="IGES(Phospho)NDSSNR(Label:13C(6)15N(4))|IGESNDS(Phospho)SNR(Label:13C(6)15N(4))|IGESNDSS(Phospho)NR(Label:13C(6)15N(4))"/>
     </Transition>
-    <Transition id="48" peptideRef="1">
+    <Transition id="48" peptideRef="0">
       <Precursor>
-        <cvParam cvRef="MS" accession="MS:1000827" name="isolation window target m/z" value="405.5195" unitCvRef="MS" unitAccession="MS:1000040" unitName="m/z"/>
+        <cvParam cvRef="MS" accession="MS:1000827" name="isolation window target m/z" value="405.519499999999994" unitCvRef="MS" unitAccession="MS:1000040" unitName="m/z"/>
       </Precursor>
       <Product>
         <cvParam cvRef="MS" accession="MS:1000041" name="charge state" value="2"/>
@@ -1096,9 +1098,9 @@
       <userParam name="quantifying_transition" type="xsd:boolean" value="false"/>
       <userParam name="Peptidoforms" type="xsd:string" value="KLDS(Phospho)GQSSFR(Label:13C(6)15N(4))|KLDSGQS(Phospho)SFR(Label:13C(6)15N(4))|KLDSGQSS(Phospho)FR(Label:13C(6)15N(4))"/>
     </Transition>
-    <Transition id="49" peptideRef="1">
+    <Transition id="49" peptideRef="0">
       <Precursor>
-        <cvParam cvRef="MS" accession="MS:1000827" name="isolation window target m/z" value="405.5195" unitCvRef="MS" unitAccession="MS:1000040" unitName="m/z"/>
+        <cvParam cvRef="MS" accession="MS:1000827" name="isolation window target m/z" value="405.519499999999994" unitCvRef="MS" unitAccession="MS:1000040" unitName="m/z"/>
       </Precursor>
       <Product>
         <cvParam cvRef="MS" accession="MS:1000041" name="charge state" value="1"/>
@@ -1118,9 +1120,9 @@
       <userParam name="quantifying_transition" type="xsd:boolean" value="false"/>
       <userParam name="Peptidoforms" type="xsd:string" value="KLDSGQSS(Phospho)FR(Label:13C(6)15N(4))"/>
     </Transition>
-    <Transition id="50" peptideRef="1">
+    <Transition id="50" peptideRef="0">
       <Precursor>
-        <cvParam cvRef="MS" accession="MS:1000827" name="isolation window target m/z" value="405.5195" unitCvRef="MS" unitAccession="MS:1000040" unitName="m/z"/>
+        <cvParam cvRef="MS" accession="MS:1000827" name="isolation window target m/z" value="405.519499999999994" unitCvRef="MS" unitAccession="MS:1000040" unitName="m/z"/>
       </Precursor>
       <Product>
         <cvParam cvRef="MS" accession="MS:1000041" name="charge state" value="2"/>
@@ -1140,9 +1142,9 @@
       <userParam name="quantifying_transition" type="xsd:boolean" value="false"/>
       <userParam name="Peptidoforms" type="xsd:string" value="IGES(Phospho)NDSSNR(Label:13C(6)15N(4))|IGESNDS(Phospho)SNR(Label:13C(6)15N(4))|IGESNDSS(Phospho)NR(Label:13C(6)15N(4))"/>
     </Transition>
-    <Transition id="51" peptideRef="1">
+    <Transition id="51" peptideRef="0">
       <Precursor>
-        <cvParam cvRef="MS" accession="MS:1000827" name="isolation window target m/z" value="405.5195" unitCvRef="MS" unitAccession="MS:1000040" unitName="m/z"/>
+        <cvParam cvRef="MS" accession="MS:1000827" name="isolation window target m/z" value="405.519499999999994" unitCvRef="MS" unitAccession="MS:1000040" unitName="m/z"/>
       </Precursor>
       <Product>
         <cvParam cvRef="MS" accession="MS:1000041" name="charge state" value="1"/>
@@ -1162,9 +1164,9 @@
       <userParam name="quantifying_transition" type="xsd:boolean" value="false"/>
       <userParam name="Peptidoforms" type="xsd:string" value="IGESNDS(Phospho)SNR(Label:13C(6)15N(4))|IGESNDSS(Phospho)NR(Label:13C(6)15N(4))"/>
     </Transition>
-    <Transition id="52" peptideRef="1">
+    <Transition id="52" peptideRef="0">
       <Precursor>
-        <cvParam cvRef="MS" accession="MS:1000827" name="isolation window target m/z" value="405.5195" unitCvRef="MS" unitAccession="MS:1000040" unitName="m/z"/>
+        <cvParam cvRef="MS" accession="MS:1000827" name="isolation window target m/z" value="405.519499999999994" unitCvRef="MS" unitAccession="MS:1000040" unitName="m/z"/>
       </Precursor>
       <Product>
         <cvParam cvRef="MS" accession="MS:1000041" name="charge state" value="1"/>
@@ -1180,9 +1182,9 @@
       <cvParam cvRef="MS" accession="MS:1001226" name="product ion intensity" value="2080.08"/>
       <cvParam cvRef="MS" accession="MS:1002007" name="target SRM transition"/>
     </Transition>
-    <Transition id="53" peptideRef="1">
+    <Transition id="53" peptideRef="0">
       <Precursor>
-        <cvParam cvRef="MS" accession="MS:1000827" name="isolation window target m/z" value="405.5195" unitCvRef="MS" unitAccession="MS:1000040" unitName="m/z"/>
+        <cvParam cvRef="MS" accession="MS:1000827" name="isolation window target m/z" value="405.519499999999994" unitCvRef="MS" unitAccession="MS:1000040" unitName="m/z"/>
       </Precursor>
       <Product>
         <cvParam cvRef="MS" accession="MS:1000041" name="charge state" value="1"/>
@@ -1202,9 +1204,9 @@
       <userParam name="quantifying_transition" type="xsd:boolean" value="false"/>
       <userParam name="Peptidoforms" type="xsd:string" value="KLDSGQS(Phospho)SFR(Label:13C(6)15N(4))|KLDSGQSS(Phospho)FR(Label:13C(6)15N(4))"/>
     </Transition>
-    <Transition id="54" peptideRef="1">
+    <Transition id="54" peptideRef="0">
       <Precursor>
-        <cvParam cvRef="MS" accession="MS:1000827" name="isolation window target m/z" value="405.5195" unitCvRef="MS" unitAccession="MS:1000040" unitName="m/z"/>
+        <cvParam cvRef="MS" accession="MS:1000827" name="isolation window target m/z" value="405.519499999999994" unitCvRef="MS" unitAccession="MS:1000040" unitName="m/z"/>
       </Precursor>
       <Product>
         <cvParam cvRef="MS" accession="MS:1000041" name="charge state" value="1"/>
@@ -1224,9 +1226,9 @@
       <userParam name="quantifying_transition" type="xsd:boolean" value="false"/>
       <userParam name="Peptidoforms" type="xsd:string" value="KLDS(Phospho)GQSSFR(Label:13C(6)15N(4))"/>
     </Transition>
-    <Transition id="55" peptideRef="19">
+    <Transition id="55" peptideRef="1">
       <Precursor>
-        <cvParam cvRef="MS" accession="MS:1000827" name="isolation window target m/z" value="405.5195" unitCvRef="MS" unitAccession="MS:1000040" unitName="m/z"/>
+        <cvParam cvRef="MS" accession="MS:1000827" name="isolation window target m/z" value="405.519499999999994" unitCvRef="MS" unitAccession="MS:1000040" unitName="m/z"/>
       </Precursor>
       <Product>
         <cvParam cvRef="MS" accession="MS:1000041" name="charge state" value="1"/>
@@ -1242,9 +1244,9 @@
       <cvParam cvRef="MS" accession="MS:1001226" name="product ion intensity" value="1026.51"/>
       <cvParam cvRef="MS" accession="MS:1002008" name="decoy SRM transition"/>
     </Transition>
-    <Transition id="56" peptideRef="1">
+    <Transition id="56" peptideRef="0">
       <Precursor>
-        <cvParam cvRef="MS" accession="MS:1000827" name="isolation window target m/z" value="405.5195" unitCvRef="MS" unitAccession="MS:1000040" unitName="m/z"/>
+        <cvParam cvRef="MS" accession="MS:1000827" name="isolation window target m/z" value="405.519499999999994" unitCvRef="MS" unitAccession="MS:1000040" unitName="m/z"/>
       </Precursor>
       <Product>
         <cvParam cvRef="MS" accession="MS:1000041" name="charge state" value="2"/>
@@ -1264,9 +1266,9 @@
       <userParam name="quantifying_transition" type="xsd:boolean" value="false"/>
       <userParam name="Peptidoforms" type="xsd:string" value="KLDS(Phospho)GQSSFR(Label:13C(6)15N(4))|KLDSGQS(Phospho)SFR(Label:13C(6)15N(4))|KLDSGQSS(Phospho)FR(Label:13C(6)15N(4))"/>
     </Transition>
-    <Transition id="57" peptideRef="1">
+    <Transition id="57" peptideRef="0">
       <Precursor>
-        <cvParam cvRef="MS" accession="MS:1000827" name="isolation window target m/z" value="405.5195" unitCvRef="MS" unitAccession="MS:1000040" unitName="m/z"/>
+        <cvParam cvRef="MS" accession="MS:1000827" name="isolation window target m/z" value="405.519499999999994" unitCvRef="MS" unitAccession="MS:1000040" unitName="m/z"/>
       </Precursor>
       <Product>
         <cvParam cvRef="MS" accession="MS:1000041" name="charge state" value="1"/>
@@ -1286,9 +1288,9 @@
       <userParam name="quantifying_transition" type="xsd:boolean" value="false"/>
       <userParam name="Peptidoforms" type="xsd:string" value="KLDS(Phospho)GQSSFR(Label:13C(6)15N(4))"/>
     </Transition>
-    <Transition id="58" peptideRef="1">
+    <Transition id="58" peptideRef="0">
       <Precursor>
-        <cvParam cvRef="MS" accession="MS:1000827" name="isolation window target m/z" value="405.5195" unitCvRef="MS" unitAccession="MS:1000040" unitName="m/z"/>
+        <cvParam cvRef="MS" accession="MS:1000827" name="isolation window target m/z" value="405.519499999999994" unitCvRef="MS" unitAccession="MS:1000040" unitName="m/z"/>
       </Precursor>
       <Product>
         <cvParam cvRef="MS" accession="MS:1000041" name="charge state" value="2"/>
@@ -1308,9 +1310,9 @@
       <userParam name="quantifying_transition" type="xsd:boolean" value="false"/>
       <userParam name="Peptidoforms" type="xsd:string" value="IGES(Phospho)NDSSNR(Label:13C(6)15N(4))|IGESNDS(Phospho)SNR(Label:13C(6)15N(4))|IGESNDSS(Phospho)NR(Label:13C(6)15N(4))"/>
     </Transition>
-    <Transition id="59" peptideRef="1">
+    <Transition id="59" peptideRef="0">
       <Precursor>
-        <cvParam cvRef="MS" accession="MS:1000827" name="isolation window target m/z" value="405.5195" unitCvRef="MS" unitAccession="MS:1000040" unitName="m/z"/>
+        <cvParam cvRef="MS" accession="MS:1000827" name="isolation window target m/z" value="405.519499999999994" unitCvRef="MS" unitAccession="MS:1000040" unitName="m/z"/>
       </Precursor>
       <Product>
         <cvParam cvRef="MS" accession="MS:1000041" name="charge state" value="2"/>
@@ -1330,9 +1332,9 @@
       <userParam name="quantifying_transition" type="xsd:boolean" value="false"/>
       <userParam name="Peptidoforms" type="xsd:string" value="KLDS(Phospho)GQSSFR(Label:13C(6)15N(4))|KLDSGQS(Phospho)SFR(Label:13C(6)15N(4))|KLDSGQSS(Phospho)FR(Label:13C(6)15N(4))"/>
     </Transition>
-    <Transition id="60" peptideRef="1">
+    <Transition id="60" peptideRef="0">
       <Precursor>
-        <cvParam cvRef="MS" accession="MS:1000827" name="isolation window target m/z" value="405.5195" unitCvRef="MS" unitAccession="MS:1000040" unitName="m/z"/>
+        <cvParam cvRef="MS" accession="MS:1000827" name="isolation window target m/z" value="405.519499999999994" unitCvRef="MS" unitAccession="MS:1000040" unitName="m/z"/>
       </Precursor>
       <Product>
         <cvParam cvRef="MS" accession="MS:1000041" name="charge state" value="1"/>
@@ -1352,9 +1354,9 @@
       <userParam name="quantifying_transition" type="xsd:boolean" value="false"/>
       <userParam name="Peptidoforms" type="xsd:string" value="IGESNDS(Phospho)SNR(Label:13C(6)15N(4))|IGESNDSS(Phospho)NR(Label:13C(6)15N(4))"/>
     </Transition>
-    <Transition id="61" peptideRef="1">
+    <Transition id="61" peptideRef="0">
       <Precursor>
-        <cvParam cvRef="MS" accession="MS:1000827" name="isolation window target m/z" value="405.5195" unitCvRef="MS" unitAccession="MS:1000040" unitName="m/z"/>
+        <cvParam cvRef="MS" accession="MS:1000827" name="isolation window target m/z" value="405.519499999999994" unitCvRef="MS" unitAccession="MS:1000040" unitName="m/z"/>
       </Precursor>
       <Product>
         <cvParam cvRef="MS" accession="MS:1000041" name="charge state" value="1"/>
@@ -1374,9 +1376,9 @@
       <userParam name="quantifying_transition" type="xsd:boolean" value="false"/>
       <userParam name="Peptidoforms" type="xsd:string" value="IGESNDS(Phospho)SNR(Label:13C(6)15N(4))|IGESNDSS(Phospho)NR(Label:13C(6)15N(4))"/>
     </Transition>
-    <Transition id="62" peptideRef="1">
+    <Transition id="62" peptideRef="0">
       <Precursor>
-        <cvParam cvRef="MS" accession="MS:1000827" name="isolation window target m/z" value="405.5195" unitCvRef="MS" unitAccession="MS:1000040" unitName="m/z"/>
+        <cvParam cvRef="MS" accession="MS:1000827" name="isolation window target m/z" value="405.519499999999994" unitCvRef="MS" unitAccession="MS:1000040" unitName="m/z"/>
       </Precursor>
       <Product>
         <cvParam cvRef="MS" accession="MS:1000041" name="charge state" value="1"/>
@@ -1396,9 +1398,9 @@
       <userParam name="quantifying_transition" type="xsd:boolean" value="false"/>
       <userParam name="Peptidoforms" type="xsd:string" value="IGES(Phospho)NDSSNR(Label:13C(6)15N(4))"/>
     </Transition>
-    <Transition id="63" peptideRef="1">
+    <Transition id="63" peptideRef="0">
       <Precursor>
-        <cvParam cvRef="MS" accession="MS:1000827" name="isolation window target m/z" value="405.5195" unitCvRef="MS" unitAccession="MS:1000040" unitName="m/z"/>
+        <cvParam cvRef="MS" accession="MS:1000827" name="isolation window target m/z" value="405.519499999999994" unitCvRef="MS" unitAccession="MS:1000040" unitName="m/z"/>
       </Precursor>
       <Product>
         <cvParam cvRef="MS" accession="MS:1000041" name="charge state" value="1"/>
@@ -1418,9 +1420,9 @@
       <userParam name="quantifying_transition" type="xsd:boolean" value="false"/>
       <userParam name="Peptidoforms" type="xsd:string" value="KLDS(Phospho)GQSSFR(Label:13C(6)15N(4))"/>
     </Transition>
-    <Transition id="64" peptideRef="1">
+    <Transition id="64" peptideRef="0">
       <Precursor>
-        <cvParam cvRef="MS" accession="MS:1000827" name="isolation window target m/z" value="405.5195" unitCvRef="MS" unitAccession="MS:1000040" unitName="m/z"/>
+        <cvParam cvRef="MS" accession="MS:1000827" name="isolation window target m/z" value="405.519499999999994" unitCvRef="MS" unitAccession="MS:1000040" unitName="m/z"/>
       </Precursor>
       <Product>
         <cvParam cvRef="MS" accession="MS:1000041" name="charge state" value="1"/>
@@ -1436,9 +1438,9 @@
       <cvParam cvRef="MS" accession="MS:1001226" name="product ion intensity" value="1912.6"/>
       <cvParam cvRef="MS" accession="MS:1002007" name="target SRM transition"/>
     </Transition>
-    <Transition id="65" peptideRef="1">
+    <Transition id="65" peptideRef="0">
       <Precursor>
-        <cvParam cvRef="MS" accession="MS:1000827" name="isolation window target m/z" value="405.5195" unitCvRef="MS" unitAccession="MS:1000040" unitName="m/z"/>
+        <cvParam cvRef="MS" accession="MS:1000827" name="isolation window target m/z" value="405.519499999999994" unitCvRef="MS" unitAccession="MS:1000040" unitName="m/z"/>
       </Precursor>
       <Product>
         <cvParam cvRef="MS" accession="MS:1000041" name="charge state" value="1"/>
@@ -1458,9 +1460,9 @@
       <userParam name="quantifying_transition" type="xsd:boolean" value="false"/>
       <userParam name="Peptidoforms" type="xsd:string" value="KLDSGQS(Phospho)SFR(Label:13C(6)15N(4))|KLDSGQSS(Phospho)FR(Label:13C(6)15N(4))"/>
     </Transition>
-    <Transition id="66" peptideRef="1">
+    <Transition id="66" peptideRef="0">
       <Precursor>
-        <cvParam cvRef="MS" accession="MS:1000827" name="isolation window target m/z" value="405.5195" unitCvRef="MS" unitAccession="MS:1000040" unitName="m/z"/>
+        <cvParam cvRef="MS" accession="MS:1000827" name="isolation window target m/z" value="405.519499999999994" unitCvRef="MS" unitAccession="MS:1000040" unitName="m/z"/>
       </Precursor>
       <Product>
         <cvParam cvRef="MS" accession="MS:1000041" name="charge state" value="1"/>
@@ -1480,9 +1482,9 @@
       <userParam name="quantifying_transition" type="xsd:boolean" value="false"/>
       <userParam name="Peptidoforms" type="xsd:string" value="IGES(Phospho)NDSSNR(Label:13C(6)15N(4))"/>
     </Transition>
-    <Transition id="67" peptideRef="1">
+    <Transition id="67" peptideRef="0">
       <Precursor>
-        <cvParam cvRef="MS" accession="MS:1000827" name="isolation window target m/z" value="405.5195" unitCvRef="MS" unitAccession="MS:1000040" unitName="m/z"/>
+        <cvParam cvRef="MS" accession="MS:1000827" name="isolation window target m/z" value="405.519499999999994" unitCvRef="MS" unitAccession="MS:1000040" unitName="m/z"/>
       </Precursor>
       <Product>
         <cvParam cvRef="MS" accession="MS:1000041" name="charge state" value="1"/>
@@ -1502,9 +1504,9 @@
       <userParam name="quantifying_transition" type="xsd:boolean" value="false"/>
       <userParam name="Peptidoforms" type="xsd:string" value="IGES(Phospho)NDSSNR(Label:13C(6)15N(4))"/>
     </Transition>
-    <Transition id="68" peptideRef="1">
+    <Transition id="68" peptideRef="0">
       <Precursor>
-        <cvParam cvRef="MS" accession="MS:1000827" name="isolation window target m/z" value="405.5195" unitCvRef="MS" unitAccession="MS:1000040" unitName="m/z"/>
+        <cvParam cvRef="MS" accession="MS:1000827" name="isolation window target m/z" value="405.519499999999994" unitCvRef="MS" unitAccession="MS:1000040" unitName="m/z"/>
       </Precursor>
       <Product>
         <cvParam cvRef="MS" accession="MS:1000041" name="charge state" value="1"/>
@@ -1524,9 +1526,9 @@
       <userParam name="quantifying_transition" type="xsd:boolean" value="false"/>
       <userParam name="Peptidoforms" type="xsd:string" value="KLDS(Phospho)GQSSFR(Label:13C(6)15N(4))"/>
     </Transition>
-    <Transition id="69" peptideRef="1">
+    <Transition id="69" peptideRef="0">
       <Precursor>
-        <cvParam cvRef="MS" accession="MS:1000827" name="isolation window target m/z" value="405.5195" unitCvRef="MS" unitAccession="MS:1000040" unitName="m/z"/>
+        <cvParam cvRef="MS" accession="MS:1000827" name="isolation window target m/z" value="405.519499999999994" unitCvRef="MS" unitAccession="MS:1000040" unitName="m/z"/>
       </Precursor>
       <Product>
         <cvParam cvRef="MS" accession="MS:1000041" name="charge state" value="1"/>
@@ -1546,9 +1548,9 @@
       <userParam name="quantifying_transition" type="xsd:boolean" value="false"/>
       <userParam name="Peptidoforms" type="xsd:string" value="IGESNDS(Phospho)SNR(Label:13C(6)15N(4))|IGESNDSS(Phospho)NR(Label:13C(6)15N(4))"/>
     </Transition>
-    <Transition id="70" peptideRef="1">
+    <Transition id="70" peptideRef="0">
       <Precursor>
-        <cvParam cvRef="MS" accession="MS:1000827" name="isolation window target m/z" value="405.5195" unitCvRef="MS" unitAccession="MS:1000040" unitName="m/z"/>
+        <cvParam cvRef="MS" accession="MS:1000827" name="isolation window target m/z" value="405.519499999999994" unitCvRef="MS" unitAccession="MS:1000040" unitName="m/z"/>
       </Precursor>
       <Product>
         <cvParam cvRef="MS" accession="MS:1000041" name="charge state" value="1"/>
@@ -1568,9 +1570,9 @@
       <userParam name="quantifying_transition" type="xsd:boolean" value="false"/>
       <userParam name="Peptidoforms" type="xsd:string" value="KLDSGQS(Phospho)SFR(Label:13C(6)15N(4))|KLDSGQSS(Phospho)FR(Label:13C(6)15N(4))"/>
     </Transition>
-    <Transition id="71" peptideRef="19">
+    <Transition id="71" peptideRef="1">
       <Precursor>
-        <cvParam cvRef="MS" accession="MS:1000827" name="isolation window target m/z" value="405.5195" unitCvRef="MS" unitAccession="MS:1000040" unitName="m/z"/>
+        <cvParam cvRef="MS" accession="MS:1000827" name="isolation window target m/z" value="405.519499999999994" unitCvRef="MS" unitAccession="MS:1000040" unitName="m/z"/>
       </Precursor>
       <Product>
         <cvParam cvRef="MS" accession="MS:1000041" name="charge state" value="1"/>
@@ -1586,9 +1588,9 @@
       <cvParam cvRef="MS" accession="MS:1001226" name="product ion intensity" value="2080.08"/>
       <cvParam cvRef="MS" accession="MS:1002008" name="decoy SRM transition"/>
     </Transition>
-    <Transition id="72" peptideRef="1">
+    <Transition id="72" peptideRef="0">
       <Precursor>
-        <cvParam cvRef="MS" accession="MS:1000827" name="isolation window target m/z" value="405.5195" unitCvRef="MS" unitAccession="MS:1000040" unitName="m/z"/>
+        <cvParam cvRef="MS" accession="MS:1000827" name="isolation window target m/z" value="405.519499999999994" unitCvRef="MS" unitAccession="MS:1000040" unitName="m/z"/>
       </Precursor>
       <Product>
         <cvParam cvRef="MS" accession="MS:1000041" name="charge state" value="1"/>
@@ -1604,9 +1606,9 @@
       <cvParam cvRef="MS" accession="MS:1001226" name="product ion intensity" value="1231.6"/>
       <cvParam cvRef="MS" accession="MS:1002007" name="target SRM transition"/>
     </Transition>
-    <Transition id="73" peptideRef="1">
+    <Transition id="73" peptideRef="0">
       <Precursor>
-        <cvParam cvRef="MS" accession="MS:1000827" name="isolation window target m/z" value="405.5195" unitCvRef="MS" unitAccession="MS:1000040" unitName="m/z"/>
+        <cvParam cvRef="MS" accession="MS:1000827" name="isolation window target m/z" value="405.519499999999994" unitCvRef="MS" unitAccession="MS:1000040" unitName="m/z"/>
       </Precursor>
       <Product>
         <cvParam cvRef="MS" accession="MS:1000041" name="charge state" value="1"/>
@@ -1626,9 +1628,9 @@
       <userParam name="quantifying_transition" type="xsd:boolean" value="false"/>
       <userParam name="Peptidoforms" type="xsd:string" value="KLDSGQS(Phospho)SFR(Label:13C(6)15N(4))|KLDSGQSS(Phospho)FR(Label:13C(6)15N(4))"/>
     </Transition>
-    <Transition id="74" peptideRef="1">
+    <Transition id="74" peptideRef="0">
       <Precursor>
-        <cvParam cvRef="MS" accession="MS:1000827" name="isolation window target m/z" value="405.5195" unitCvRef="MS" unitAccession="MS:1000040" unitName="m/z"/>
+        <cvParam cvRef="MS" accession="MS:1000827" name="isolation window target m/z" value="405.519499999999994" unitCvRef="MS" unitAccession="MS:1000040" unitName="m/z"/>
       </Precursor>
       <Product>
         <cvParam cvRef="MS" accession="MS:1000041" name="charge state" value="1"/>
@@ -1648,9 +1650,9 @@
       <userParam name="quantifying_transition" type="xsd:boolean" value="false"/>
       <userParam name="Peptidoforms" type="xsd:string" value="KLDS(Phospho)GQSSFR(Label:13C(6)15N(4))"/>
     </Transition>
-    <Transition id="75" peptideRef="1">
+    <Transition id="75" peptideRef="0">
       <Precursor>
-        <cvParam cvRef="MS" accession="MS:1000827" name="isolation window target m/z" value="405.5195" unitCvRef="MS" unitAccession="MS:1000040" unitName="m/z"/>
+        <cvParam cvRef="MS" accession="MS:1000827" name="isolation window target m/z" value="405.519499999999994" unitCvRef="MS" unitAccession="MS:1000040" unitName="m/z"/>
       </Precursor>
       <Product>
         <cvParam cvRef="MS" accession="MS:1000041" name="charge state" value="1"/>
@@ -1670,9 +1672,9 @@
       <userParam name="quantifying_transition" type="xsd:boolean" value="false"/>
       <userParam name="Peptidoforms" type="xsd:string" value="IGESNDS(Phospho)SNR(Label:13C(6)15N(4))|IGESNDSS(Phospho)NR(Label:13C(6)15N(4))"/>
     </Transition>
-    <Transition id="76" peptideRef="1">
+    <Transition id="76" peptideRef="0">
       <Precursor>
-        <cvParam cvRef="MS" accession="MS:1000827" name="isolation window target m/z" value="405.5195" unitCvRef="MS" unitAccession="MS:1000040" unitName="m/z"/>
+        <cvParam cvRef="MS" accession="MS:1000827" name="isolation window target m/z" value="405.519499999999994" unitCvRef="MS" unitAccession="MS:1000040" unitName="m/z"/>
       </Precursor>
       <Product>
         <cvParam cvRef="MS" accession="MS:1000041" name="charge state" value="1"/>
@@ -1692,9 +1694,9 @@
       <userParam name="quantifying_transition" type="xsd:boolean" value="false"/>
       <userParam name="Peptidoforms" type="xsd:string" value="KLDSGQS(Phospho)SFR(Label:13C(6)15N(4))|KLDSGQSS(Phospho)FR(Label:13C(6)15N(4))"/>
     </Transition>
-    <Transition id="77" peptideRef="1">
+    <Transition id="77" peptideRef="0">
       <Precursor>
-        <cvParam cvRef="MS" accession="MS:1000827" name="isolation window target m/z" value="405.5195" unitCvRef="MS" unitAccession="MS:1000040" unitName="m/z"/>
+        <cvParam cvRef="MS" accession="MS:1000827" name="isolation window target m/z" value="405.519499999999994" unitCvRef="MS" unitAccession="MS:1000040" unitName="m/z"/>
       </Precursor>
       <Product>
         <cvParam cvRef="MS" accession="MS:1000041" name="charge state" value="1"/>
@@ -1714,9 +1716,9 @@
       <userParam name="quantifying_transition" type="xsd:boolean" value="false"/>
       <userParam name="Peptidoforms" type="xsd:string" value="IGESNDS(Phospho)SNR(Label:13C(6)15N(4))|IGESNDSS(Phospho)NR(Label:13C(6)15N(4))"/>
     </Transition>
-    <Transition id="78" peptideRef="1">
+    <Transition id="78" peptideRef="0">
       <Precursor>
-        <cvParam cvRef="MS" accession="MS:1000827" name="isolation window target m/z" value="405.5195" unitCvRef="MS" unitAccession="MS:1000040" unitName="m/z"/>
+        <cvParam cvRef="MS" accession="MS:1000827" name="isolation window target m/z" value="405.519499999999994" unitCvRef="MS" unitAccession="MS:1000040" unitName="m/z"/>
       </Precursor>
       <Product>
         <cvParam cvRef="MS" accession="MS:1000041" name="charge state" value="1"/>
@@ -1736,9 +1738,9 @@
       <userParam name="quantifying_transition" type="xsd:boolean" value="false"/>
       <userParam name="Peptidoforms" type="xsd:string" value="IGES(Phospho)NDSSNR(Label:13C(6)15N(4))|IGESNDS(Phospho)SNR(Label:13C(6)15N(4))"/>
     </Transition>
-    <Transition id="79" peptideRef="1">
+    <Transition id="79" peptideRef="0">
       <Precursor>
-        <cvParam cvRef="MS" accession="MS:1000827" name="isolation window target m/z" value="405.5195" unitCvRef="MS" unitAccession="MS:1000040" unitName="m/z"/>
+        <cvParam cvRef="MS" accession="MS:1000827" name="isolation window target m/z" value="405.519499999999994" unitCvRef="MS" unitAccession="MS:1000040" unitName="m/z"/>
       </Precursor>
       <Product>
         <cvParam cvRef="MS" accession="MS:1000041" name="charge state" value="1"/>
@@ -1758,9 +1760,9 @@
       <userParam name="quantifying_transition" type="xsd:boolean" value="false"/>
       <userParam name="Peptidoforms" type="xsd:string" value="KLDS(Phospho)GQSSFR(Label:13C(6)15N(4))"/>
     </Transition>
-    <Transition id="80" peptideRef="1">
+    <Transition id="80" peptideRef="0">
       <Precursor>
-        <cvParam cvRef="MS" accession="MS:1000827" name="isolation window target m/z" value="405.5195" unitCvRef="MS" unitAccession="MS:1000040" unitName="m/z"/>
+        <cvParam cvRef="MS" accession="MS:1000827" name="isolation window target m/z" value="405.519499999999994" unitCvRef="MS" unitAccession="MS:1000040" unitName="m/z"/>
       </Precursor>
       <Product>
         <cvParam cvRef="MS" accession="MS:1000041" name="charge state" value="1"/>
@@ -1780,9 +1782,9 @@
       <userParam name="quantifying_transition" type="xsd:boolean" value="false"/>
       <userParam name="Peptidoforms" type="xsd:string" value="IGES(Phospho)NDSSNR(Label:13C(6)15N(4))"/>
     </Transition>
-    <Transition id="81" peptideRef="1">
+    <Transition id="81" peptideRef="0">
       <Precursor>
-        <cvParam cvRef="MS" accession="MS:1000827" name="isolation window target m/z" value="405.5195" unitCvRef="MS" unitAccession="MS:1000040" unitName="m/z"/>
+        <cvParam cvRef="MS" accession="MS:1000827" name="isolation window target m/z" value="405.519499999999994" unitCvRef="MS" unitAccession="MS:1000040" unitName="m/z"/>
       </Precursor>
       <Product>
         <cvParam cvRef="MS" accession="MS:1000041" name="charge state" value="1"/>
@@ -1802,9 +1804,9 @@
       <userParam name="quantifying_transition" type="xsd:boolean" value="false"/>
       <userParam name="Peptidoforms" type="xsd:string" value="KLDS(Phospho)GQSSFR(Label:13C(6)15N(4))|KLDSGQS(Phospho)SFR(Label:13C(6)15N(4))"/>
     </Transition>
-    <Transition id="82" peptideRef="1">
+    <Transition id="82" peptideRef="0">
       <Precursor>
-        <cvParam cvRef="MS" accession="MS:1000827" name="isolation window target m/z" value="405.5195" unitCvRef="MS" unitAccession="MS:1000040" unitName="m/z"/>
+        <cvParam cvRef="MS" accession="MS:1000827" name="isolation window target m/z" value="405.519499999999994" unitCvRef="MS" unitAccession="MS:1000040" unitName="m/z"/>
       </Precursor>
       <Product>
         <cvParam cvRef="MS" accession="MS:1000041" name="charge state" value="1"/>
@@ -1824,9 +1826,9 @@
       <userParam name="quantifying_transition" type="xsd:boolean" value="false"/>
       <userParam name="Peptidoforms" type="xsd:string" value="IGES(Phospho)NDSSNR(Label:13C(6)15N(4))"/>
     </Transition>
-    <Transition id="83" peptideRef="1">
+    <Transition id="83" peptideRef="0">
       <Precursor>
-        <cvParam cvRef="MS" accession="MS:1000827" name="isolation window target m/z" value="405.5195" unitCvRef="MS" unitAccession="MS:1000040" unitName="m/z"/>
+        <cvParam cvRef="MS" accession="MS:1000827" name="isolation window target m/z" value="405.519499999999994" unitCvRef="MS" unitAccession="MS:1000040" unitName="m/z"/>
       </Precursor>
       <Product>
         <cvParam cvRef="MS" accession="MS:1000041" name="charge state" value="1"/>
@@ -1846,9 +1848,9 @@
       <userParam name="quantifying_transition" type="xsd:boolean" value="false"/>
       <userParam name="Peptidoforms" type="xsd:string" value="IGESNDSS(Phospho)NR(Label:13C(6)15N(4))"/>
     </Transition>
-    <Transition id="84" peptideRef="1">
+    <Transition id="84" peptideRef="0">
       <Precursor>
-        <cvParam cvRef="MS" accession="MS:1000827" name="isolation window target m/z" value="405.5195" unitCvRef="MS" unitAccession="MS:1000040" unitName="m/z"/>
+        <cvParam cvRef="MS" accession="MS:1000827" name="isolation window target m/z" value="405.519499999999994" unitCvRef="MS" unitAccession="MS:1000040" unitName="m/z"/>
       </Precursor>
       <Product>
         <cvParam cvRef="MS" accession="MS:1000041" name="charge state" value="1"/>
@@ -1868,9 +1870,9 @@
       <userParam name="quantifying_transition" type="xsd:boolean" value="false"/>
       <userParam name="Peptidoforms" type="xsd:string" value="KLDS(Phospho)GQSSFR(Label:13C(6)15N(4))"/>
     </Transition>
-    <Transition id="85" peptideRef="1">
+    <Transition id="85" peptideRef="0">
       <Precursor>
-        <cvParam cvRef="MS" accession="MS:1000827" name="isolation window target m/z" value="405.5195" unitCvRef="MS" unitAccession="MS:1000040" unitName="m/z"/>
+        <cvParam cvRef="MS" accession="MS:1000827" name="isolation window target m/z" value="405.519499999999994" unitCvRef="MS" unitAccession="MS:1000040" unitName="m/z"/>
       </Precursor>
       <Product>
         <cvParam cvRef="MS" accession="MS:1000041" name="charge state" value="1"/>
@@ -1890,9 +1892,9 @@
       <userParam name="quantifying_transition" type="xsd:boolean" value="false"/>
       <userParam name="Peptidoforms" type="xsd:string" value="KLDSGQS(Phospho)SFR(Label:13C(6)15N(4))|KLDSGQSS(Phospho)FR(Label:13C(6)15N(4))"/>
     </Transition>
-    <Transition id="86" peptideRef="1">
+    <Transition id="86" peptideRef="0">
       <Precursor>
-        <cvParam cvRef="MS" accession="MS:1000827" name="isolation window target m/z" value="405.5195" unitCvRef="MS" unitAccession="MS:1000040" unitName="m/z"/>
+        <cvParam cvRef="MS" accession="MS:1000827" name="isolation window target m/z" value="405.519499999999994" unitCvRef="MS" unitAccession="MS:1000040" unitName="m/z"/>
       </Precursor>
       <Product>
         <cvParam cvRef="MS" accession="MS:1000041" name="charge state" value="1"/>
@@ -1912,9 +1914,9 @@
       <userParam name="quantifying_transition" type="xsd:boolean" value="false"/>
       <userParam name="Peptidoforms" type="xsd:string" value="KLDSGQSS(Phospho)FR(Label:13C(6)15N(4))"/>
     </Transition>
-    <Transition id="87" peptideRef="1">
+    <Transition id="87" peptideRef="0">
       <Precursor>
-        <cvParam cvRef="MS" accession="MS:1000827" name="isolation window target m/z" value="405.5195" unitCvRef="MS" unitAccession="MS:1000040" unitName="m/z"/>
+        <cvParam cvRef="MS" accession="MS:1000827" name="isolation window target m/z" value="405.519499999999994" unitCvRef="MS" unitAccession="MS:1000040" unitName="m/z"/>
       </Precursor>
       <Product>
         <cvParam cvRef="MS" accession="MS:1000041" name="charge state" value="1"/>
@@ -1934,9 +1936,9 @@
       <userParam name="quantifying_transition" type="xsd:boolean" value="false"/>
       <userParam name="Peptidoforms" type="xsd:string" value="KLDS(Phospho)GQSSFR(Label:13C(6)15N(4))|KLDSGQS(Phospho)SFR(Label:13C(6)15N(4))|KLDSGQSS(Phospho)FR(Label:13C(6)15N(4))"/>
     </Transition>
-    <Transition id="88" peptideRef="1">
+    <Transition id="88" peptideRef="0">
       <Precursor>
-        <cvParam cvRef="MS" accession="MS:1000827" name="isolation window target m/z" value="405.5195" unitCvRef="MS" unitAccession="MS:1000040" unitName="m/z"/>
+        <cvParam cvRef="MS" accession="MS:1000827" name="isolation window target m/z" value="405.519499999999994" unitCvRef="MS" unitAccession="MS:1000040" unitName="m/z"/>
       </Precursor>
       <Product>
         <cvParam cvRef="MS" accession="MS:1000041" name="charge state" value="1"/>
@@ -1956,9 +1958,9 @@
       <userParam name="quantifying_transition" type="xsd:boolean" value="false"/>
       <userParam name="Peptidoforms" type="xsd:string" value="KLDSGQS(Phospho)SFR(Label:13C(6)15N(4))|KLDSGQSS(Phospho)FR(Label:13C(6)15N(4))"/>
     </Transition>
-    <Transition id="89" peptideRef="1">
+    <Transition id="89" peptideRef="0">
       <Precursor>
-        <cvParam cvRef="MS" accession="MS:1000827" name="isolation window target m/z" value="405.5195" unitCvRef="MS" unitAccession="MS:1000040" unitName="m/z"/>
+        <cvParam cvRef="MS" accession="MS:1000827" name="isolation window target m/z" value="405.519499999999994" unitCvRef="MS" unitAccession="MS:1000040" unitName="m/z"/>
       </Precursor>
       <Product>
         <cvParam cvRef="MS" accession="MS:1000041" name="charge state" value="1"/>
@@ -1978,9 +1980,9 @@
       <userParam name="quantifying_transition" type="xsd:boolean" value="false"/>
       <userParam name="Peptidoforms" type="xsd:string" value="IGES(Phospho)NDSSNR(Label:13C(6)15N(4))|IGESNDS(Phospho)SNR(Label:13C(6)15N(4))|IGESNDSS(Phospho)NR(Label:13C(6)15N(4))"/>
     </Transition>
-    <Transition id="90" peptideRef="19">
+    <Transition id="90" peptideRef="1">
       <Precursor>
-        <cvParam cvRef="MS" accession="MS:1000827" name="isolation window target m/z" value="405.5195" unitCvRef="MS" unitAccession="MS:1000040" unitName="m/z"/>
+        <cvParam cvRef="MS" accession="MS:1000827" name="isolation window target m/z" value="405.519499999999994" unitCvRef="MS" unitAccession="MS:1000040" unitName="m/z"/>
       </Precursor>
       <Product>
         <cvParam cvRef="MS" accession="MS:1000041" name="charge state" value="1"/>
@@ -1996,9 +1998,9 @@
       <cvParam cvRef="MS" accession="MS:1001226" name="product ion intensity" value="1231.6"/>
       <cvParam cvRef="MS" accession="MS:1002008" name="decoy SRM transition"/>
     </Transition>
-    <Transition id="91" peptideRef="1">
+    <Transition id="91" peptideRef="0">
       <Precursor>
-        <cvParam cvRef="MS" accession="MS:1000827" name="isolation window target m/z" value="405.5195" unitCvRef="MS" unitAccession="MS:1000040" unitName="m/z"/>
+        <cvParam cvRef="MS" accession="MS:1000827" name="isolation window target m/z" value="405.519499999999994" unitCvRef="MS" unitAccession="MS:1000040" unitName="m/z"/>
       </Precursor>
       <Product>
         <cvParam cvRef="MS" accession="MS:1000041" name="charge state" value="1"/>
@@ -2018,9 +2020,9 @@
       <userParam name="quantifying_transition" type="xsd:boolean" value="false"/>
       <userParam name="Peptidoforms" type="xsd:string" value="IGESNDS(Phospho)SNR(Label:13C(6)15N(4))|IGESNDSS(Phospho)NR(Label:13C(6)15N(4))"/>
     </Transition>
-    <Transition id="92" peptideRef="1">
+    <Transition id="92" peptideRef="0">
       <Precursor>
-        <cvParam cvRef="MS" accession="MS:1000827" name="isolation window target m/z" value="405.5195" unitCvRef="MS" unitAccession="MS:1000040" unitName="m/z"/>
+        <cvParam cvRef="MS" accession="MS:1000827" name="isolation window target m/z" value="405.519499999999994" unitCvRef="MS" unitAccession="MS:1000040" unitName="m/z"/>
       </Precursor>
       <Product>
         <cvParam cvRef="MS" accession="MS:1000041" name="charge state" value="1"/>
@@ -2040,9 +2042,9 @@
       <userParam name="quantifying_transition" type="xsd:boolean" value="false"/>
       <userParam name="Peptidoforms" type="xsd:string" value="IGES(Phospho)NDSSNR(Label:13C(6)15N(4))|IGESNDS(Phospho)SNR(Label:13C(6)15N(4))"/>
     </Transition>
-    <Transition id="93" peptideRef="1">
+    <Transition id="93" peptideRef="0">
       <Precursor>
-        <cvParam cvRef="MS" accession="MS:1000827" name="isolation window target m/z" value="405.5195" unitCvRef="MS" unitAccession="MS:1000040" unitName="m/z"/>
+        <cvParam cvRef="MS" accession="MS:1000827" name="isolation window target m/z" value="405.519499999999994" unitCvRef="MS" unitAccession="MS:1000040" unitName="m/z"/>
       </Precursor>
       <Product>
         <cvParam cvRef="MS" accession="MS:1000041" name="charge state" value="1"/>
@@ -2062,9 +2064,9 @@
       <userParam name="quantifying_transition" type="xsd:boolean" value="false"/>
       <userParam name="Peptidoforms" type="xsd:string" value="KLDS(Phospho)GQSSFR(Label:13C(6)15N(4))|KLDSGQS(Phospho)SFR(Label:13C(6)15N(4))|KLDSGQSS(Phospho)FR(Label:13C(6)15N(4))"/>
     </Transition>
-    <Transition id="94" peptideRef="1">
+    <Transition id="94" peptideRef="0">
       <Precursor>
-        <cvParam cvRef="MS" accession="MS:1000827" name="isolation window target m/z" value="405.5195" unitCvRef="MS" unitAccession="MS:1000040" unitName="m/z"/>
+        <cvParam cvRef="MS" accession="MS:1000827" name="isolation window target m/z" value="405.519499999999994" unitCvRef="MS" unitAccession="MS:1000040" unitName="m/z"/>
       </Precursor>
       <Product>
         <cvParam cvRef="MS" accession="MS:1000041" name="charge state" value="1"/>
@@ -2084,9 +2086,9 @@
       <userParam name="quantifying_transition" type="xsd:boolean" value="false"/>
       <userParam name="Peptidoforms" type="xsd:string" value="KLDS(Phospho)GQSSFR(Label:13C(6)15N(4))|KLDSGQS(Phospho)SFR(Label:13C(6)15N(4))"/>
     </Transition>
-    <Transition id="95" peptideRef="1">
+    <Transition id="95" peptideRef="0">
       <Precursor>
-        <cvParam cvRef="MS" accession="MS:1000827" name="isolation window target m/z" value="405.5195" unitCvRef="MS" unitAccession="MS:1000040" unitName="m/z"/>
+        <cvParam cvRef="MS" accession="MS:1000827" name="isolation window target m/z" value="405.519499999999994" unitCvRef="MS" unitAccession="MS:1000040" unitName="m/z"/>
       </Precursor>
       <Product>
         <cvParam cvRef="MS" accession="MS:1000041" name="charge state" value="1"/>
@@ -2106,9 +2108,9 @@
       <userParam name="quantifying_transition" type="xsd:boolean" value="false"/>
       <userParam name="Peptidoforms" type="xsd:string" value="KLDS(Phospho)GQSSFR(Label:13C(6)15N(4))|KLDSGQS(Phospho)SFR(Label:13C(6)15N(4))|KLDSGQSS(Phospho)FR(Label:13C(6)15N(4))"/>
     </Transition>
-    <Transition id="96" peptideRef="1">
+    <Transition id="96" peptideRef="0">
       <Precursor>
-        <cvParam cvRef="MS" accession="MS:1000827" name="isolation window target m/z" value="405.5195" unitCvRef="MS" unitAccession="MS:1000040" unitName="m/z"/>
+        <cvParam cvRef="MS" accession="MS:1000827" name="isolation window target m/z" value="405.519499999999994" unitCvRef="MS" unitAccession="MS:1000040" unitName="m/z"/>
       </Precursor>
       <Product>
         <cvParam cvRef="MS" accession="MS:1000041" name="charge state" value="1"/>
@@ -2128,9 +2130,9 @@
       <userParam name="quantifying_transition" type="xsd:boolean" value="false"/>
       <userParam name="Peptidoforms" type="xsd:string" value="IGES(Phospho)NDSSNR(Label:13C(6)15N(4))|IGESNDS(Phospho)SNR(Label:13C(6)15N(4))|IGESNDSS(Phospho)NR(Label:13C(6)15N(4))"/>
     </Transition>
-    <Transition id="97" peptideRef="1">
+    <Transition id="97" peptideRef="0">
       <Precursor>
-        <cvParam cvRef="MS" accession="MS:1000827" name="isolation window target m/z" value="405.5195" unitCvRef="MS" unitAccession="MS:1000040" unitName="m/z"/>
+        <cvParam cvRef="MS" accession="MS:1000827" name="isolation window target m/z" value="405.519499999999994" unitCvRef="MS" unitAccession="MS:1000040" unitName="m/z"/>
       </Precursor>
       <Product>
         <cvParam cvRef="MS" accession="MS:1000041" name="charge state" value="1"/>
@@ -2150,9 +2152,9 @@
       <userParam name="quantifying_transition" type="xsd:boolean" value="false"/>
       <userParam name="Peptidoforms" type="xsd:string" value="IGES(Phospho)NDSSNR(Label:13C(6)15N(4))|IGESNDS(Phospho)SNR(Label:13C(6)15N(4))|IGESNDSS(Phospho)NR(Label:13C(6)15N(4))"/>
     </Transition>
-    <Transition id="98" peptideRef="1">
+    <Transition id="98" peptideRef="0">
       <Precursor>
-        <cvParam cvRef="MS" accession="MS:1000827" name="isolation window target m/z" value="405.5195" unitCvRef="MS" unitAccession="MS:1000040" unitName="m/z"/>
+        <cvParam cvRef="MS" accession="MS:1000827" name="isolation window target m/z" value="405.519499999999994" unitCvRef="MS" unitAccession="MS:1000040" unitName="m/z"/>
       </Precursor>
       <Product>
         <cvParam cvRef="MS" accession="MS:1000041" name="charge state" value="1"/>
@@ -2172,9 +2174,9 @@
       <userParam name="quantifying_transition" type="xsd:boolean" value="false"/>
       <userParam name="Peptidoforms" type="xsd:string" value="KLDS(Phospho)GQSSFR(Label:13C(6)15N(4))|KLDSGQS(Phospho)SFR(Label:13C(6)15N(4))|KLDSGQSS(Phospho)FR(Label:13C(6)15N(4))"/>
     </Transition>
-    <Transition id="99" peptideRef="1">
+    <Transition id="99" peptideRef="0">
       <Precursor>
-        <cvParam cvRef="MS" accession="MS:1000827" name="isolation window target m/z" value="405.5195" unitCvRef="MS" unitAccession="MS:1000040" unitName="m/z"/>
+        <cvParam cvRef="MS" accession="MS:1000827" name="isolation window target m/z" value="405.519499999999994" unitCvRef="MS" unitAccession="MS:1000040" unitName="m/z"/>
       </Precursor>
       <Product>
         <cvParam cvRef="MS" accession="MS:1000041" name="charge state" value="1"/>
@@ -2194,9 +2196,9 @@
       <userParam name="quantifying_transition" type="xsd:boolean" value="false"/>
       <userParam name="Peptidoforms" type="xsd:string" value="KLDS(Phospho)GQSSFR(Label:13C(6)15N(4))|KLDSGQS(Phospho)SFR(Label:13C(6)15N(4))|KLDSGQSS(Phospho)FR(Label:13C(6)15N(4))"/>
     </Transition>
-    <Transition id="100" peptideRef="1">
+    <Transition id="100" peptideRef="0">
       <Precursor>
-        <cvParam cvRef="MS" accession="MS:1000827" name="isolation window target m/z" value="405.5195" unitCvRef="MS" unitAccession="MS:1000040" unitName="m/z"/>
+        <cvParam cvRef="MS" accession="MS:1000827" name="isolation window target m/z" value="405.519499999999994" unitCvRef="MS" unitAccession="MS:1000040" unitName="m/z"/>
       </Precursor>
       <Product>
         <cvParam cvRef="MS" accession="MS:1000041" name="charge state" value="1"/>
@@ -2216,9 +2218,9 @@
       <userParam name="quantifying_transition" type="xsd:boolean" value="false"/>
       <userParam name="Peptidoforms" type="xsd:string" value="IGES(Phospho)NDSSNR(Label:13C(6)15N(4))|IGESNDS(Phospho)SNR(Label:13C(6)15N(4))|IGESNDSS(Phospho)NR(Label:13C(6)15N(4))"/>
     </Transition>
-    <Transition id="101" peptideRef="1">
+    <Transition id="101" peptideRef="0">
       <Precursor>
-        <cvParam cvRef="MS" accession="MS:1000827" name="isolation window target m/z" value="405.5195" unitCvRef="MS" unitAccession="MS:1000040" unitName="m/z"/>
+        <cvParam cvRef="MS" accession="MS:1000827" name="isolation window target m/z" value="405.519499999999994" unitCvRef="MS" unitAccession="MS:1000040" unitName="m/z"/>
       </Precursor>
       <Product>
         <cvParam cvRef="MS" accession="MS:1000041" name="charge state" value="1"/>
@@ -2238,9 +2240,9 @@
       <userParam name="quantifying_transition" type="xsd:boolean" value="false"/>
       <userParam name="Peptidoforms" type="xsd:string" value="IGES(Phospho)NDSSNR(Label:13C(6)15N(4))|IGESNDS(Phospho)SNR(Label:13C(6)15N(4))|IGESNDSS(Phospho)NR(Label:13C(6)15N(4))"/>
     </Transition>
-    <Transition id="102" peptideRef="1">
+    <Transition id="102" peptideRef="0">
       <Precursor>
-        <cvParam cvRef="MS" accession="MS:1000827" name="isolation window target m/z" value="405.5195" unitCvRef="MS" unitAccession="MS:1000040" unitName="m/z"/>
+        <cvParam cvRef="MS" accession="MS:1000827" name="isolation window target m/z" value="405.519499999999994" unitCvRef="MS" unitAccession="MS:1000040" unitName="m/z"/>
       </Precursor>
       <Product>
         <cvParam cvRef="MS" accession="MS:1000041" name="charge state" value="1"/>
@@ -2260,9 +2262,9 @@
       <userParam name="quantifying_transition" type="xsd:boolean" value="false"/>
       <userParam name="Peptidoforms" type="xsd:string" value="KLDS(Phospho)GQSSFR(Label:13C(6)15N(4))|KLDSGQS(Phospho)SFR(Label:13C(6)15N(4))|KLDSGQSS(Phospho)FR(Label:13C(6)15N(4))"/>
     </Transition>
-    <Transition id="103" peptideRef="1">
+    <Transition id="103" peptideRef="0">
       <Precursor>
-        <cvParam cvRef="MS" accession="MS:1000827" name="isolation window target m/z" value="405.5195" unitCvRef="MS" unitAccession="MS:1000040" unitName="m/z"/>
+        <cvParam cvRef="MS" accession="MS:1000827" name="isolation window target m/z" value="405.519499999999994" unitCvRef="MS" unitAccession="MS:1000040" unitName="m/z"/>
       </Precursor>
       <Product>
         <cvParam cvRef="MS" accession="MS:1000041" name="charge state" value="1"/>
@@ -2282,9 +2284,9 @@
       <userParam name="quantifying_transition" type="xsd:boolean" value="false"/>
       <userParam name="Peptidoforms" type="xsd:string" value="IGES(Phospho)NDSSNR(Label:13C(6)15N(4))|IGESNDS(Phospho)SNR(Label:13C(6)15N(4))|IGESNDSS(Phospho)NR(Label:13C(6)15N(4))"/>
     </Transition>
-    <Transition id="104" peptideRef="1">
+    <Transition id="104" peptideRef="0">
       <Precursor>
-        <cvParam cvRef="MS" accession="MS:1000827" name="isolation window target m/z" value="405.5195" unitCvRef="MS" unitAccession="MS:1000040" unitName="m/z"/>
+        <cvParam cvRef="MS" accession="MS:1000827" name="isolation window target m/z" value="405.519499999999994" unitCvRef="MS" unitAccession="MS:1000040" unitName="m/z"/>
       </Precursor>
       <Product>
         <cvParam cvRef="MS" accession="MS:1000041" name="charge state" value="1"/>
@@ -2304,9 +2306,9 @@
       <userParam name="quantifying_transition" type="xsd:boolean" value="false"/>
       <userParam name="Peptidoforms" type="xsd:string" value="KLDS(Phospho)GQSSFR(Label:13C(6)15N(4))|KLDSGQS(Phospho)SFR(Label:13C(6)15N(4))|KLDSGQSS(Phospho)FR(Label:13C(6)15N(4))"/>
     </Transition>
-    <Transition id="105" peptideRef="1">
+    <Transition id="105" peptideRef="0">
       <Precursor>
-        <cvParam cvRef="MS" accession="MS:1000827" name="isolation window target m/z" value="405.5195" unitCvRef="MS" unitAccession="MS:1000040" unitName="m/z"/>
+        <cvParam cvRef="MS" accession="MS:1000827" name="isolation window target m/z" value="405.519499999999994" unitCvRef="MS" unitAccession="MS:1000040" unitName="m/z"/>
       </Precursor>
       <Product>
         <cvParam cvRef="MS" accession="MS:1000041" name="charge state" value="1"/>
@@ -2326,9 +2328,9 @@
       <userParam name="quantifying_transition" type="xsd:boolean" value="false"/>
       <userParam name="Peptidoforms" type="xsd:string" value="IGES(Phospho)NDSSNR(Label:13C(6)15N(4))|IGESNDS(Phospho)SNR(Label:13C(6)15N(4))|IGESNDSS(Phospho)NR(Label:13C(6)15N(4))"/>
     </Transition>
-    <Transition id="106" peptideRef="1">
+    <Transition id="106" peptideRef="0">
       <Precursor>
-        <cvParam cvRef="MS" accession="MS:1000827" name="isolation window target m/z" value="405.5195" unitCvRef="MS" unitAccession="MS:1000040" unitName="m/z"/>
+        <cvParam cvRef="MS" accession="MS:1000827" name="isolation window target m/z" value="405.519499999999994" unitCvRef="MS" unitAccession="MS:1000040" unitName="m/z"/>
       </Precursor>
       <Product>
         <cvParam cvRef="MS" accession="MS:1000041" name="charge state" value="1"/>
@@ -2348,9 +2350,9 @@
       <userParam name="quantifying_transition" type="xsd:boolean" value="false"/>
       <userParam name="Peptidoforms" type="xsd:string" value="KLDS(Phospho)GQSSFR(Label:13C(6)15N(4))|KLDSGQS(Phospho)SFR(Label:13C(6)15N(4))|KLDSGQSS(Phospho)FR(Label:13C(6)15N(4))"/>
     </Transition>
-    <Transition id="107" peptideRef="1">
+    <Transition id="107" peptideRef="0">
       <Precursor>
-        <cvParam cvRef="MS" accession="MS:1000827" name="isolation window target m/z" value="405.5195" unitCvRef="MS" unitAccession="MS:1000040" unitName="m/z"/>
+        <cvParam cvRef="MS" accession="MS:1000827" name="isolation window target m/z" value="405.519499999999994" unitCvRef="MS" unitAccession="MS:1000040" unitName="m/z"/>
       </Precursor>
       <Product>
         <cvParam cvRef="MS" accession="MS:1000041" name="charge state" value="1"/>
@@ -2370,9 +2372,9 @@
       <userParam name="quantifying_transition" type="xsd:boolean" value="false"/>
       <userParam name="Peptidoforms" type="xsd:string" value="IGES(Phospho)NDSSNR(Label:13C(6)15N(4))|IGESNDS(Phospho)SNR(Label:13C(6)15N(4))|IGESNDSS(Phospho)NR(Label:13C(6)15N(4))"/>
     </Transition>
-    <Transition id="108" peptideRef="1">
+    <Transition id="108" peptideRef="0">
       <Precursor>
-        <cvParam cvRef="MS" accession="MS:1000827" name="isolation window target m/z" value="405.5195" unitCvRef="MS" unitAccession="MS:1000040" unitName="m/z"/>
+        <cvParam cvRef="MS" accession="MS:1000827" name="isolation window target m/z" value="405.519499999999994" unitCvRef="MS" unitAccession="MS:1000040" unitName="m/z"/>
       </Precursor>
       <Product>
         <cvParam cvRef="MS" accession="MS:1000041" name="charge state" value="1"/>
@@ -2392,9 +2394,9 @@
       <userParam name="quantifying_transition" type="xsd:boolean" value="false"/>
       <userParam name="Peptidoforms" type="xsd:string" value="KLDS(Phospho)GQSSFR(Label:13C(6)15N(4))|KLDSGQS(Phospho)SFR(Label:13C(6)15N(4))|KLDSGQSS(Phospho)FR(Label:13C(6)15N(4))"/>
     </Transition>
-    <Transition id="109" peptideRef="1">
+    <Transition id="109" peptideRef="0">
       <Precursor>
-        <cvParam cvRef="MS" accession="MS:1000827" name="isolation window target m/z" value="405.5195" unitCvRef="MS" unitAccession="MS:1000040" unitName="m/z"/>
+        <cvParam cvRef="MS" accession="MS:1000827" name="isolation window target m/z" value="405.519499999999994" unitCvRef="MS" unitAccession="MS:1000040" unitName="m/z"/>
       </Precursor>
       <Product>
         <cvParam cvRef="MS" accession="MS:1000041" name="charge state" value="1"/>
@@ -2414,9 +2416,9 @@
       <userParam name="quantifying_transition" type="xsd:boolean" value="false"/>
       <userParam name="Peptidoforms" type="xsd:string" value="IGES(Phospho)NDSSNR(Label:13C(6)15N(4))|IGESNDS(Phospho)SNR(Label:13C(6)15N(4))|IGESNDSS(Phospho)NR(Label:13C(6)15N(4))"/>
     </Transition>
-    <Transition id="110" peptideRef="1">
+    <Transition id="110" peptideRef="0">
       <Precursor>
-        <cvParam cvRef="MS" accession="MS:1000827" name="isolation window target m/z" value="405.5195" unitCvRef="MS" unitAccession="MS:1000040" unitName="m/z"/>
+        <cvParam cvRef="MS" accession="MS:1000827" name="isolation window target m/z" value="405.519499999999994" unitCvRef="MS" unitAccession="MS:1000040" unitName="m/z"/>
       </Precursor>
       <Product>
         <cvParam cvRef="MS" accession="MS:1000041" name="charge state" value="1"/>
